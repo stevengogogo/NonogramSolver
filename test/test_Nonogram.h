@@ -1,0 +1,60 @@
+#ifndef TEST_NONOGRAM_H
+#define TEST_NONOGRAM_H
+
+#include <string.h>
+#include "acutest.h"
+#include "include/NonogramSolver.h"
+
+/*Create a nonogram problem*/
+void test_nonogram_struct(void){
+
+    /*Create a nonogram problem*/
+    int pLen[] = {1,1}; //Point lengths
+    hint h = create_hint(pLen, 2);//Single hint
+    hint hs[] = {h,h,h,h};
+    hints H = create_hints(hs, 4);//all hints
+
+    nogram nm; //nonogram probel
+    size2D s = {
+        .N=2,
+        .M=2
+    };//map size
+
+    nm = init_nogram(nm, s, H);//init: map object, size and hints
+
+    /*Verify information*/
+    nm.map[0][0] = hole_val; //create psudo solution
+    nm.map[0][1] = fill_val;
+    char* hint_str;
+    char* hint_str_real;
+    char* nogram_str = create_nogram_str(nm);
+    char* nogram_str_real = "\n_o\n22";
+
+    // Compare Hints
+    for(int i=0;i<nm.Nhs.len;i++){
+        TEST_ASSERT(comp_hint(nm.Nhs.h[i], H.h[i]) == 1);
+    }
+    for(int i=nm.Nhs.len;i<nm.Mhs.len;i++){
+        TEST_ASSERT(comp_hint(nm.Mhs.h[i-nm.Nhs.len], H.h[i]) == 1);
+    }
+
+    //Test nogram map
+    TEST_ASSERT(striden(nogram_str_real, nogram_str) == 0);
+    TEST_MSG("Real map: %s. \nBut got %s", nogram_str_real, nogram_str); 
+    //print_nogram_str(nm);
+    close_nogram_str(nogram_str);
+}
+
+void test_hint_printout(void){
+    int pLens[] = {1,1,5,2};
+    hint h= create_hint(pLens, 4);
+    char *hstr = create_hint_str(h);
+    printf("hint: %s ", hstr);
+    print_hint_str(h);
+    //Cleanup
+    close_hint_str(hstr);
+}
+
+
+
+#endif
