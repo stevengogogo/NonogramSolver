@@ -1,23 +1,57 @@
 #ifndef TEST_NONOGRAM_H
 #define TEST_NONOGRAM_H
 
+#include <string.h>
+#include "acutest.h"
 #include "include/NonogramSolver.h"
 
+/*Create a nonogram problem*/
 void test_nonogram_struct(void){
-    int pLen[] = {1,1};
-    int map[2][2] = {{1,1}, {1,1}};
+
+    /*Create a nonogram problem*/
+    int pLen[] = {1,1}; //Point lengths
+    hint h = create_hint(pLen, 2);//Single hint
+    hint hs[] = {h,h,h,h};
+    hints H = create_hints(hs, 4);//all hints
+
+    nogram nm; //nonogram probel
     size2D s = {
-        .nrow = 2,
-        .ncol = 2
-    };
+        .N=2,
+        .M=2
+    };//map size
 
-    hint h = {
-        .nPoint=2,
-        .pLen = pLen
-    };
+    nm = init_nogram(nm, s, H);//init: map object, size and hints
 
+    /*Verify information*/
+    char* hint_str;
+    char* hint_str_real;
+    char* nogram_str = create_nogram_str(nm);
+    char* nogram_str_real = "\n22\n22";
 
+    print_hint_str(nm.Nhs.h[0]);
 
+    // Compare Hints
+    for(int i=0;i<nm.Nhs.len;i++){
+        TEST_ASSERT(comp_hint(nm.Nhs.h[i], H.h[i]) == 1);
+    }
+    for(int i=nm.Nhs.len;i<nm.Mhs.len;i++){
+        TEST_ASSERT(comp_hint(nm.Mhs.h[i-nm.Nhs.len], H.h[i]) == 1);
+    }
+
+    //Test nogram map
+    TEST_ASSERT(striden(nogram_str_real, nogram_str) == 0);
+    print_nogram_str(nm);
+    close_nogram_str(nogram_str);
+}
+
+void test_hint_printout(void){
+    int pLens[] = {1,1,5,2};
+    hint h= create_hint(pLens, 4);
+    char *hstr = create_hint_str(h);
+    printf("hint: %s ", hstr);
+    print_hint_str(h);
+    //Cleanup
+    close_hint_str(hstr);
 }
 
 

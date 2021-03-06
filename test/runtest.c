@@ -6,7 +6,8 @@
 
 // Run TESTs 
 TEST_LIST = {
-    {"Nonogram printer", test_nonogram_struct},
+    {"Nonogram constructors", test_nonogram_struct},
+    {"Nonogram printer", test_hint_printout},
     {"Utility", test_utils},
     {NULL, NULL} // Terminate the test
 };
