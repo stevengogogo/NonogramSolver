@@ -23,12 +23,12 @@ void test_nonogram_struct(void){
     nm = init_nogram(nm, s, H);//init: map object, size and hints
 
     /*Verify information*/
+    nm.map[0][0] = hole_val; //create psudo solution
+    nm.map[0][1] = fill_val;
     char* hint_str;
     char* hint_str_real;
     char* nogram_str = create_nogram_str(nm);
-    char* nogram_str_real = "\n22\n22";
-
-    print_hint_str(nm.Nhs.h[0]);
+    char* nogram_str_real = "\n_o\n22";
 
     // Compare Hints
     for(int i=0;i<nm.Nhs.len;i++){
@@ -40,7 +40,8 @@ void test_nonogram_struct(void){
 
     //Test nogram map
     TEST_ASSERT(striden(nogram_str_real, nogram_str) == 0);
-    print_nogram_str(nm);
+    TEST_MSG("Real map: %s. \nBut got %s", nogram_str_real, nogram_str); 
+    //print_nogram_str(nm);
     close_nogram_str(nogram_str);
 }
 
