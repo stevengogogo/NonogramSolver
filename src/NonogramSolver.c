@@ -185,10 +185,7 @@ char* create_nogram_str(nogram nm){
     size_t mapsize = ((nm.size.N+1) * (nm.size.M+1)+ 1) * sizeof(char) ;
     char val;
     char* mapstr = (char*)malloc(mapsize);
-<<<<<<< HEAD
-=======
     assert(mapstr!=NULL);
->>>>>>> PrintAndRead
 
 
     //Save values
