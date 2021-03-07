@@ -33,6 +33,7 @@ void test_dymarr(void){
 
     //Pop and remove
     TEST_ASSERT(pop_dymarr(&a) == arr[arr_len-1]);
+    TEST_ASSERT(a.len == arr_len);
 
     close_dymarr(&a);
 }

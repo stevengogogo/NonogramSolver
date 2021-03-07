@@ -55,15 +55,12 @@ int comp_hints(hints, hints);
 int comp_hint(hint, hint);
 int comp_size2D(size2D, size2D);
 
-<<<<<<< HEAD
-=======
 //verification: 1 (valid); 0 otherwise
 int is_nogram_valid(nogram nm);
 int is_line_valid(int line[], int len_line, hint);
 //Return 1 if there is no undefine region
 int is_line_set(int line[], int len_line);
 
->>>>>>> PrintAndRead
 //Display
 char bool2sym(int);
 void print_nogram_str(nogram);
