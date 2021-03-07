@@ -127,6 +127,36 @@ int comp_size2D(size2D a, size2D b){
     }
 }
 
+//verification
+int is_nogram_valid(nogram nm){
+
+}
+
+int is_line_valid(int line[], int len_line, hint h){
+    // Check the line is well-defined
+    if (is_line_set(line, len_line) == 0)
+        return 0;
+    
+}
+
+int is_line_set(int line[], int len_line){
+    int undef_i, def_i ;
+    undef_i = findfirst_int_arr(line,len_line, Undef_Site_Val);
+    def_i = findfirst_int_arr(line,len_line, Default_Site_Val);
+
+    if(undef_i != -1)
+        printf("Warning: the input array containing Undefine region at %d", undef_i);
+
+    if(def_i!=-1)
+        printf("Warning: the input array containing default region at %d", def_i);
+
+    if ( (undef_i!=-1) | (def_i!=-1))
+        return 0;
+
+    return 1;
+}
+
+
 //Display
 char bool2sym(int a){
     char as;
@@ -155,6 +185,7 @@ char* create_nogram_str(nogram nm){
     size_t mapsize = ((nm.size.N+1) * (nm.size.M+1)+ 1) * sizeof(char) ;
     char val;
     char* mapstr = (char*)malloc(mapsize);
+    assert(mapstr!=NULL);
 
 
     //Save values

@@ -42,9 +42,66 @@ int main()
 
 ## Git tag
 
-```sh
-git tag -a v1.4 -m "my version 1.4"
+- Add tag
+    ```sh
+    git tag -a v0.0.1 -m "my version 1.4"
+    ```
+- Push tag
+    ```sh
+    git push origin v0.0.1
+    ```
+
+## Header files
+> It is not recommended to put function definitions in a header file. Ideally there should be only function declarations. Purpose of this code is to only demonstrate working of header files. 
+
+## Implementation of dynamic 1D array
+
+```c
+typedef struct {
+  int *array;
+  size_t used;
+  size_t size;
+} Array;
+
+void initArray(Array *a, size_t initialSize) {
+  a->array = malloc(initialSize * sizeof(int));
+  a->used = 0;
+  a->size = initialSize;
+}
+
+void insertArray(Array *a, int element) {
+  // a->used is the number of used entries, because a->array[a->used++] updates a->used only *after* the array has been accessed.
+  // Therefore a->used can go up to a->size 
+  if (a->used == a->size) {
+    a->size *= 2;
+    a->array = realloc(a->array, a->size * sizeof(int));
+  }
+  a->array[a->used++] = element;
+}
+
+void freeArray(Array *a) {
+  free(a->array);
+  a->array = NULL;
+  a->used = a->size = 0;
+}
 ```
+
+Usage
+
+```c
+Array a;
+int i;
+
+initArray(&a, 5);  // initially 5 elements
+for (i = 0; i < 100; i++)
+  insertArray(&a, i);  // automatically resizes as necessary
+printf("%d\n", a.array[9]);  // print 10th element
+printf("%d\n", a.used);  // print number of elements
+freeArray(&a);
+```
+https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
+
+Use `realloc` to increase or shrink the size.
 
 ## Reference
 1. 2D array construction. [[GreekforGeek](https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/)]
@@ -52,3 +109,4 @@ git tag -a v1.4 -m "my version 1.4"
 3. Integer to string: `itoa`. [[Blog](https://www.cnblogs.com/oomusou/archive/2007/01/06/613413.html)]
 4. Compare with `memcpy` [[Tutorial](http://tw.gitbook.net/c_standard_library/c_function_memcmp.html)]
     - 不能用於 struct [[reason](https://stackoverflow.com/questions/141720/how-do-you-compare-structs-for-equality-in-c)]
+6. Memory management in C [[tutorial](https://www.guru99.com/c-dynamic-memory-allocation.html#5)]
