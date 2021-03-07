@@ -9,5 +9,6 @@ TEST_LIST = {
     {"Nonogram constructors", test_nonogram_struct},
     {"Nonogram printer", test_hint_printout},
     {"Utility", test_utils},
+    {"Utility:Dynamical array", test_dymarr},
     {NULL, NULL} // Terminate the test
 };
