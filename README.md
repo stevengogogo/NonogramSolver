@@ -1,6 +1,6 @@
-# CProjectTemplate
+# Nonogram Solver
 
-
+[![Ubuntu](https://github.com/stevengogogo/NonogramSolver/actions/workflows/ci.yml/badge.svg)](https://github.com/stevengogogo/NonogramSolver/actions/workflows/ci.yml)[![codecov](https://codecov.io/gh/stevengogogo/NonogramSolver/branch/main/graph/badge.svg?token=5F6B6C9M1K)](https://codecov.io/gh/stevengogogo/NonogramSolver)[![Doxygen Action](https://github.com/stevengogogo/NonogramSolver/actions/workflows/doc.yml/badge.svg)](https://github.com/stevengogogo/NonogramSolver/actions/workflows/doc.yml)[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://stevengogogo.github.io/NonogramSolver/)
 
 
 ![](https://user-images.githubusercontent.com/29009898/110197098-19e2aa00-7e84-11eb-8e0c-396e6a0056a3.png)
@@ -42,11 +42,6 @@ int main()
 
 ## Git tag
 
-<<<<<<< HEAD
-```sh
-git tag -a v1.4 -m "my version 1.4"
-```
-=======
 - Add tag
     ```sh
     git tag -a v0.0.1 -m "my version 1.4"
@@ -107,16 +102,11 @@ freeArray(&a);
 https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 
 Use `realloc` to increase or shrink the size.
->>>>>>> PrintAndRead
 
 ## Reference
 1. 2D array construction. [[GreekforGeek](https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/)]
 2. Git tag. [[Blog](https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%A8%99%E7%B1%A4)]
 3. Integer to string: `itoa`. [[Blog](https://www.cnblogs.com/oomusou/archive/2007/01/06/613413.html)]
 4. Compare with `memcpy` [[Tutorial](http://tw.gitbook.net/c_standard_library/c_function_memcmp.html)]
-<<<<<<< HEAD
-    - 不能用於 struct [[reason](https://stackoverflow.com/questions/141720/how-do-you-compare-structs-for-equality-in-c)]
-=======
     - 不能用於 struct [[reason](https://stackoverflow.com/questions/141720/how-do-you-compare-structs-for-equality-in-c)]
 6. Memory management in C [[tutorial](https://www.guru99.com/c-dynamic-memory-allocation.html#5)]
->>>>>>> PrintAndRead
