@@ -5,7 +5,7 @@
 #ifndef NONOGRAMSOLVER_H
 #define NONOGRAMSOLVER_H
 
-/*Nonogram solver */
+/** * Nonogram solver */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,7 +26,7 @@ typedef struct {
     int pLens[MAX_LINES];
 } hint;
 
-/*Array of Hints*/
+/** * Array of Hints*/
 typedef struct {
     hint h[MAX_HINT_NUM];
     int len; 
@@ -45,14 +45,14 @@ typedef struct {
 } nogram;
 
 
-/* * @brief Initiate nonogram problem */
+/** * @brief Initiate nonogram problem */
 nogram init_nogram(nogram,size2D,hints);
-/* * @breief Initiate an undefine nonogram*/
+
+/** * @brief Initiate an undefine nonogram*/
 nogram init_nogram_undef(nogram);
 hint create_hint(int pLens[],int nPoint);
 hints create_hints(hint[],int number_of_hints);
 
-//compare identical:1, 0 otherwise
 /**
  * @brief Compare two 2D arrays
  * 
