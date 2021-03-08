@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cprojecttemplate_35',['CProjectTemplate',['../index.html',1,'']]]
+  ['nonogram_20solver_35',['Nonogram Solver',['../index.html',1,'']]]
 ];
