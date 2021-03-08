@@ -1,3 +1,7 @@
+/**
+ * @file NonogramSolver.h
+ * @brief A Nonogram Solver with brutal-force algorithm
+ */
 #ifndef NONOGRAMSOLVER_H
 #define NONOGRAMSOLVER_H
 
@@ -41,14 +45,23 @@ typedef struct {
 } nogram;
 
 
-/* Initiate nonogram problem */
+/* * @brief Initiate nonogram problem */
 nogram init_nogram(nogram,size2D,hints);
-/*Initiate an undefine nonogram*/
+/* * @breief Initiate an undefine nonogram*/
 nogram init_nogram_undef(nogram);
 hint create_hint(int pLens[],int nPoint);
 hints create_hints(hint[],int number_of_hints);
 
 //compare identical:1, 0 otherwise
+/**
+ * @brief Compare two 2D arrays
+ * 
+ * @param a 2D array with known size
+ * @param b another array for comparison
+ * @param R_length length of rows of `a`
+ * @param C_length length of columns of `a`
+ * @return int 1: Identical; 0 otherwise
+ */
 int comp_array2D(int a[MAX_LINES][MAX_LINES], int b[MAX_LINES][MAX_LINES],int R_length, int C_length);
 int comp_nogram(nogram, nogram);
 int comp_hints(hints, hints);

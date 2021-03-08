@@ -1,3 +1,7 @@
+/**
+ * @file utils.h
+ * @brief general usage
+ */
 #ifndef UTILS_H
 #define UTILS_H
 
