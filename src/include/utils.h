@@ -22,7 +22,12 @@ int findfirst_int_arr(int arr[], int arr_size, int key);
 
 
 
-/*Dynamical array*/
+/**
+ * @brief Dynamical Array
+ * @param array Interger array
+ * @param len length of data
+ * @param maxlen maximum storage
+ */
 typedef struct{
     int* array;
     int len;
