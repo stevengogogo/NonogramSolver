@@ -1,5 +1,7 @@
 <map id="src/include/NonogramSolver.h" name="src/include/NonogramSolver.h">
-<area shape="rect" id="node1" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="18,5,214,32"/>
+<area shape="rect" id="node1" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="90,5,286,32"/>
 <area shape="rect" id="node2" href="$main_8c.html" title="Interface of the nonogram solver." alt="" coords="5,80,88,107"/>
-<area shape="rect" id="node3" href="$test__Nonogram_8h_source.html" title=" " alt="" coords="112,80,259,107"/>
+<area shape="rect" id="node3" href="$NonogramSolver_8c.html" title=" " alt="" coords="113,80,263,107"/>
+<area shape="rect" id="node4" href="$test__Nonogram_8h.html" title=" " alt="" coords="288,80,435,107"/>
+<area shape="rect" id="node5" href="$runtest_8c.html" title="Unit Testing with acutest." alt="" coords="312,155,411,181"/>
 </map>
