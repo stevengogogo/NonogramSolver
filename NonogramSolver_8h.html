@@ -120,8 +120,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3c178e7725258aeed4168f59ac0eb185"><td class="memItemLeft" align="right" valign="top"><a id="a3c178e7725258aeed4168f59ac0eb185"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>hole</b>&#160;&#160;&#160;'_'</td></tr>
+<tr class="memitem:a3c178e7725258aeed4168f59ac0eb185"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a3c178e7725258aeed4168f59ac0eb185">hole</a>&#160;&#160;&#160;'_'</td></tr>
 <tr class="separator:a3c178e7725258aeed4168f59ac0eb185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18e813e09a72bd739e1fb0dfad65cf94"><td class="memItemLeft" align="right" valign="top"><a id="a18e813e09a72bd739e1fb0dfad65cf94"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>fill</b>&#160;&#160;&#160;'o'</td></tr>
@@ -148,9 +147,10 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3a3d7c9a6322d83e19d3380dbbc6c4ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a3a3d7c9a6322d83e19d3380dbbc6c4ab">init_nogram</a> (<a class="el" href="structnogram.html">nogram</a>, <a class="el" href="structsize2D.html">size2D</a>, <a class="el" href="structhints.html">hints</a>)</td></tr>
+<tr class="memdesc:a3a3d7c9a6322d83e19d3380dbbc6c4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate nonogram problem.  <a href="NonogramSolver_8h.html#a3a3d7c9a6322d83e19d3380dbbc6c4ab">More...</a><br /></td></tr>
 <tr class="separator:a3a3d7c9a6322d83e19d3380dbbc6c4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cbee4c38d5117b41cc87e30a2235d2a"><td class="memItemLeft" align="right" valign="top"><a id="a1cbee4c38d5117b41cc87e30a2235d2a"></a>
-<a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>init_nogram_undef</b> (<a class="el" href="structnogram.html">nogram</a>)</td></tr>
+<tr class="memitem:a1cbee4c38d5117b41cc87e30a2235d2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a1cbee4c38d5117b41cc87e30a2235d2a">init_nogram_undef</a> (<a class="el" href="structnogram.html">nogram</a>)</td></tr>
+<tr class="memdesc:a1cbee4c38d5117b41cc87e30a2235d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate an undefine nonogram.  <a href="NonogramSolver_8h.html#a1cbee4c38d5117b41cc87e30a2235d2a">More...</a><br /></td></tr>
 <tr class="separator:a1cbee4c38d5117b41cc87e30a2235d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c8ff1dbea31724901ad623dd8955df1"><td class="memItemLeft" align="right" valign="top"><a id="a7c8ff1dbea31724901ad623dd8955df1"></a>
 <a class="el" href="structhint.html">hint</a>&#160;</td><td class="memItemRight" valign="bottom"><b>create_hint</b> (int pLens[], int nPoint)</td></tr>
@@ -206,7 +206,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A Nonogram Solver with brutal-force algorithm. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a3c178e7725258aeed4168f59ac0eb185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c178e7725258aeed4168f59ac0eb185">&#9670;&nbsp;</a></span>hole</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define hole&#160;&#160;&#160;'_'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>Nonogram solver </li>
+</ul>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a9aae9f51e712d523e1fd708caf4184ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9aae9f51e712d523e1fd708caf4184ff">&#9670;&nbsp;</a></span>comp_array2D()</h2>
 
@@ -290,7 +308,34 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Nonogram initiation </p>
+
+<p>Initiate nonogram problem. </p>
+<ul>
+<li>Nonogram initiation </li>
+</ul>
+
+</div>
+</div>
+<a id="a1cbee4c38d5117b41cc87e30a2235d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbee4c38d5117b41cc87e30a2235d2a">&#9670;&nbsp;</a></span>init_nogram_undef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnogram.html">nogram</a> init_nogram_undef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a>&#160;</td>
+          <td class="paramname"><em>nm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initiate an undefine nonogram. </p>
+<ul>
+<li></li>
+</ul>
 
 </div>
 </div>
