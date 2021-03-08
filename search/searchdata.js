@@ -1,21 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "cdhns",
+  0: "cdhimnsu",
   1: "dhns",
-  2: "c"
+  2: "mnu",
+  3: "ci",
+  4: "c"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "pages"
+  2: "files",
+  3: "functions",
+  4: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Pages"
+  2: "Files",
+  3: "Functions",
+  4: "Pages"
 };
 

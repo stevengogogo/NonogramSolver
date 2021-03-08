@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nogram_4',['nogram',['../structnogram.html',1,'']]]
+  ['init_5fnogram_5',['init_nogram',['../NonogramSolver_8h.html#a3a3d7c9a6322d83e19d3380dbbc6c4ab',1,'NonogramSolver.c']]]
 ];
