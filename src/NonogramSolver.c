@@ -1,3 +1,7 @@
+/**
+ * @file NonogramSolver.c
+ */
+
 #include "include/NonogramSolver.h"
 
 nogram init_nogram(nogram nm_, size2D size, hints H){

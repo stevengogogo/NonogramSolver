@@ -1,3 +1,7 @@
+/**
+ * @file utils.c
+ */
+
 #include "include/utils.h"
 
 /*Compare two string. if identical returns 0. otherwise, return 0*/

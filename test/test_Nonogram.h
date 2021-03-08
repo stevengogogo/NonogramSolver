@@ -1,3 +1,7 @@
+/**
+ * @file test_Nonogram.h
+ */
+
 #ifndef TEST_NONOGRAM_H
 #define TEST_NONOGRAM_H
 
