@@ -1,6 +1,5 @@
 #include "include/NonogramSolver.h"
 
-/** Nonogram initiation*/
 nogram init_nogram(nogram nm_, size2D size, hints H){
     //number of hint is N+M
     assert(  H.len == (size.N + size.M) );

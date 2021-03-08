@@ -45,10 +45,10 @@ typedef struct {
 } nogram;
 
 
-/** * @brief Initiate nonogram problem */
+/** @brief Initiate nonogram problem */
 nogram init_nogram(nogram,size2D,hints);
 
-/** * @brief Initiate an undefine nonogram*/
+/** @brief Initiate an undefine nonogram */
 nogram init_nogram_undef(nogram);
 hint create_hint(int pLens[],int nPoint);
 hints create_hints(hint[],int number_of_hints);
