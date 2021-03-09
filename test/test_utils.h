@@ -8,9 +8,25 @@
 #include "acutest.h"
 #include "include/utils.h"
 
-void test_utils(void)
+void test_utils_find_ID(void)
 {
-   
+    dymarr* ids;
+    int arr[] = {1,2,3,4,2,1,4,2};
+    int arr_size = 7;
+    int key = 1;
+    int id_r[] = {0,5}; //location of keys;
+
+    ids = init_ids_int_arr(arr, arr_size, key);
+    
+    TEST_ASSERT(ids->len == sizeof(id_r)/sizeof(id_r[0]));
+    //Comapre all elements
+    for(int i=0;i<ids->len;i++){
+        TEST_ASSERT(ids->array[i] == id_r[i]);
+    }
+    TEST_ASSERT(ids->maxlen > ids->len);
+
+    //Clean
+    close_ids_int_arr(ids);
 }
 
 void test_dymarr(void){

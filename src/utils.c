@@ -94,5 +94,18 @@ int findfirst_int_arr(int arr[], int arr_size, int key){
     return -1;
 }
 
-dymarr* create_ids_int_arr(int arr[], int arr_size, int key){
+dymarr* init_ids_int_arr(int arr[], int arr_size, int key){
+    dymarr* ids;
+    init_dymarr(ids, arr_size);
+    
+    //Linear searching the id
+    for(int i=0;i<arr_size;i++){
+        if(arr[i] == key)
+            insert_dymarr(ids, i);
+    }
+    return ids;
+}
+
+void close_ids_int_arr(dymarr* a){
+    close_dymarr(a);
 }

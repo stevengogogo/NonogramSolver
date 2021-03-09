@@ -133,14 +133,20 @@ int comp_size2D(size2D a, size2D b){
 
 //verification
 int is_nogram_valid(nogram nm){
-    
+
 }
 
 int is_line_valid(int line[], int len_line, hint h){
+    int valid=1;
     // Check the line is well-defined
     if (is_line_set(line, len_line) == 0)
         return 0;
-    
+    dymarr* zero_is;
+    zero_is = init_ids_int_arr(line, len_line, hole);
+
+
+    close_ids_int_arr(zero_is);
+    return valid;
 }
 
 int is_line_set(int line[], int len_line){

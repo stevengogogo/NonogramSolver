@@ -44,15 +44,15 @@ void insert_arr_dymarr(dymarr*, int src[], int src_len);
 void insert_dymarr(dymarr*, int val);
 int pop_dymarr(dymarr*);
 
-//Find all id of a key in array
-dymarr* create_ids_int_arr(int arr[], int arr_size, int key);
+/** Find all id of a key in array. Return a dynamical array*/
+dymarr* init_ids_int_arr(int arr[], int arr_size, int key);
+/** Kill a dynamical array with found IDs. */
 void close_ids_int_arr(dymarr*);
-
-//Convert 1 char to int.
+/** Convert single char to int. */
 int str2int(char numstr);
+/** Initiation of interger to string*/
 void int2str(char* s,int num);
-
-//Cleaner
+/** Cleaner */
 void killstr(char*);
 
 #endif
