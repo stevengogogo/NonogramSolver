@@ -68,10 +68,11 @@ int comp_hints(hints, hints);
 int comp_hint(hint, hint);
 int comp_size2D(size2D, size2D);
 
-//verification: 1 (valid); 0 otherwise
+/**verification: 1 (valid); 0 otherwise */
 int is_nogram_valid(nogram nm);
+/** Check the validity of a line with the hing. 1:Valid, 0:Invalid*/
 int is_line_valid(int line[], int len_line, hint);
-//Return 1 if there is no undefine region
+/** Return 1 if there is no undefine region */
 int is_line_set(int line[], int len_line);
 
 //Display

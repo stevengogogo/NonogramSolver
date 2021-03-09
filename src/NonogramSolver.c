@@ -133,7 +133,7 @@ int comp_size2D(size2D a, size2D b){
 
 //verification
 int is_nogram_valid(nogram nm){
-
+    
 }
 
 int is_line_valid(int line[], int len_line, hint h){
