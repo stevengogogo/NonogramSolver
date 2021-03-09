@@ -83,11 +83,11 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">int</span> striden(<span class="keywordtype">char</span>* a, <span class="keywordtype">char</span>* b);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//Convert 1 char to int.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">int</span> str2int(<span class="keywordtype">char</span> numstr);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> int2str(<span class="keywordtype">char</span>* s,<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utils_8h.html#aa4f2c72ae18ee785a22fad9d7bc57b17">str2int</a>(<span class="keywordtype">char</span> numstr);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ac478ba0bf9d33eff2a18dffeb465b6fb">int2str</a>(<span class="keywordtype">char</span>* s,<span class="keywordtype">int</span> num);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//Cleaner</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> killstr(<span class="keywordtype">char</span>*);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ab5c6e2e3b2ab088637157914457d22f8">killstr</a>(<span class="keywordtype">char</span>*);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//find: return index of the key. return -1 if the array doesn&#39;t contain the key</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> findfirst_int_arr(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> arr_size, <span class="keywordtype">int</span> key);</div>
@@ -106,19 +106,19 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> insert_dymarr(<a class="code" href="structdymarr.html">dymarr</a>*, <span class="keywordtype">int</span> val);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">int</span> pop_dymarr(<a class="code" href="structdymarr.html">dymarr</a>*);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//Find all id of a key in array</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="structdymarr.html">dymarr</a>* create_ids_int_arr(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> arr_size, <span class="keywordtype">int</span> key);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> close_ids_int_arr(<a class="code" href="structdymarr.html">dymarr</a>*);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//Convert 1 char to int.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">int</span> str2int(<span class="keywordtype">char</span> numstr);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> int2str(<span class="keywordtype">char</span>* s,<span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//Cleaner</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> killstr(<span class="keywordtype">char</span>*);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="structdymarr.html">dymarr</a>* <a class="code" href="utils_8h.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a>(<span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> arr_size, <span class="keywordtype">int</span> key);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ac2231f32af4a640a853b83218c3dfc0e">close_ids_int_arr</a>(<a class="code" href="structdymarr.html">dymarr</a>*);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utils_8h.html#aa4f2c72ae18ee785a22fad9d7bc57b17">str2int</a>(<span class="keywordtype">char</span> numstr);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ac478ba0bf9d33eff2a18dffeb465b6fb">int2str</a>(<span class="keywordtype">char</span>* s,<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ab5c6e2e3b2ab088637157914457d22f8">killstr</a>(<span class="keywordtype">char</span>*);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructdymarr_html"><div class="ttname"><a href="structdymarr.html">dymarr</a></div><div class="ttdoc">Dynamical Array.</div><div class="ttdef"><b>Definition:</b> utils.h:35</div></div>
+<div class="ttc" id="autils_8h_html_aa4f2c72ae18ee785a22fad9d7bc57b17"><div class="ttname"><a href="utils_8h.html#aa4f2c72ae18ee785a22fad9d7bc57b17">str2int</a></div><div class="ttdeci">int str2int(char numstr)</div><div class="ttdef"><b>Definition:</b> utils.c:23</div></div>
+<div class="ttc" id="autils_8h_html_aac4c9f71325688877f31fbf7bfcc084a"><div class="ttname"><a href="utils_8h.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a></div><div class="ttdeci">dymarr * init_ids_int_arr(int arr[], int arr_size, int key)</div><div class="ttdef"><b>Definition:</b> utils.c:97</div></div>
+<div class="ttc" id="autils_8h_html_ab5c6e2e3b2ab088637157914457d22f8"><div class="ttname"><a href="utils_8h.html#ab5c6e2e3b2ab088637157914457d22f8">killstr</a></div><div class="ttdeci">void killstr(char *)</div><div class="ttdef"><b>Definition:</b> utils.c:37</div></div>
+<div class="ttc" id="autils_8h_html_ac2231f32af4a640a853b83218c3dfc0e"><div class="ttname"><a href="utils_8h.html#ac2231f32af4a640a853b83218c3dfc0e">close_ids_int_arr</a></div><div class="ttdeci">void close_ids_int_arr(dymarr *)</div><div class="ttdef"><b>Definition:</b> utils.c:109</div></div>
+<div class="ttc" id="autils_8h_html_ac478ba0bf9d33eff2a18dffeb465b6fb"><div class="ttname"><a href="utils_8h.html#ac478ba0bf9d33eff2a18dffeb465b6fb">int2str</a></div><div class="ttdeci">void int2str(char *s, int num)</div><div class="ttdef"><b>Definition:</b> utils.c:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

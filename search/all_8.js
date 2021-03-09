@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test_5fnonogram_2eh_17',['test_Nonogram.h',['../test__Nonogram_8h.html',1,'']]],
-  ['test_5futils_2eh_18',['test_utils.h',['../test__utils_8h.html',1,'']]]
+  ['size2d_20',['size2D',['../structsize2D.html',1,'']]],
+  ['str2int_21',['str2int',['../utils_8h.html#aa4f2c72ae18ee785a22fad9d7bc57b17',1,'str2int(char numstr):&#160;utils.c'],['../utils_8c.html#aa4f2c72ae18ee785a22fad9d7bc57b17',1,'str2int(char numstr):&#160;utils.c']]]
 ];
