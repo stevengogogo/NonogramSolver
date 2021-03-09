@@ -75,6 +75,9 @@ int is_line_valid(int line[], int len_line, hint);
 /** Return 1 if there is no undefine region */
 int is_line_set(int line[], int len_line);
 
+/** Count the number of segments in a array */
+int segment_number(int line[], int len_line, int key);
+
 //Display
 char bool2sym(int);
 void print_nogram_str(nogram);
@@ -83,6 +86,7 @@ void close_nogram_str(char*);
 void print_hint_str(hint);
 char* create_hint_str(hint);
 void close_hint_str(char*);
+
 
 
 #endif

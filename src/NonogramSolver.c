@@ -133,19 +133,24 @@ int comp_size2D(size2D a, size2D b){
 
 //verification
 int is_nogram_valid(nogram nm){
-
+    //TODO
 }
 
 int is_line_valid(int line[], int len_line, hint h){
     int valid=1;
+    int N_seg;//number of segments
+
     // Check the line is well-defined
     if (is_line_set(line, len_line) == 0)
         return 0;
-    dymarr* zero_is;
-    zero_is = init_ids_int_arr(line, len_line, hole);
+    
+    // Check the number of segmentation
+    N_seg = segment_number(line, len_line, fill_val);
+    if (N_seg != h.nPoint)
+        return 0;
 
-
-    close_ids_int_arr(zero_is);
+    //TODO
+    
     return valid;
 }
 
@@ -164,6 +169,17 @@ int is_line_set(int line[], int len_line){
         return 0;
 
     return 1;
+}
+
+int segment_number(int line[], int len_line, int key){
+    int init_state = 0;
+    int new_state;
+    int N_seg = 0;
+    for(int i=0;i<len_line;i++){
+        new_state = line[i];
+        N_seg += rising_FlipFlop(&init_state, new_state);
+    }
+    return N_seg;
 }
 
 

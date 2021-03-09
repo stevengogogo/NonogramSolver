@@ -55,4 +55,10 @@ void int2str(char* s,int num);
 /** Cleaner */
 void killstr(char*);
 
+
+//FlipFlop
+
+//**Rising flip flop. return 1 when switch ON. And change the init_state*/
+int rising_FlipFlop(int* init_state, int new_state);
+
 #endif

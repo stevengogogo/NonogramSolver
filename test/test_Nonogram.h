@@ -59,6 +59,19 @@ void test_hint_printout(void){
     close_hint_str(hstr);
 }
 
+void test_validity(void){
+    int line1[]={1,1,1,1};
+    int line2[]={1,1,0,1};
+    int line3[]={0,1,0,0};
+    int line4[]={1,1,1,0};
+    int line5[]={0,0,0,0};
+
+    TEST_ASSERT(segment_number(line1, 4, 1) == 1);
+    TEST_ASSERT(segment_number(line2, 4, 1) == 2);
+    TEST_ASSERT(segment_number(line3, 4, 1) == 1);
+    TEST_ASSERT(segment_number(line4, 4, 1) == 1);
+    TEST_ASSERT(segment_number(line5, 4, 1) == 0);
+}
 
 
 #endif

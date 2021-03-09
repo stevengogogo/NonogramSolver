@@ -9,7 +9,51 @@
 ## How to measure the number of segments?
 
 - Fills on the edge doesn't count
-- 
+
+|Line|# Segments|Fills|Holes|
+|---|---|---|---|---|
+|`[0,0,0,0]`|0|`[]`|`[1,2,3,4]`|
+|`[1,0,0,0]`|1|`[0]`|`[2,3,4]`|
+|`[1,1,0,0]`|1|`[0,1]`|`[2,3]`|
+|`[0,0,1,0]`|1|`[2]`|`[0,1,3]`|
+|`[1,0,1,0]`|2|`[0,2]`|`[1,3]`|
+|`[0,1,1,0]`|1|`[1,2]`|`[0,3]`|
+|`[1,1,1,0]`|1|`[0,1,2]`|`[3]`|
+|`[0,0,0,1]`|1|`[3]`|`[0,1,2]`|
+|`[1,0,0,1]`|2|`[0,3]`|`[1,2]`|
+|`[0,1,0,1]`|2|`[1,3]`|`[0,2]`|
+|`[1,1,0,1]`|2|`[0,1,3]`|`[2]`|
+|`[0,0,1,1]`|1|`[2,3]`|`[0,1]`|
+|`[1,0,1,1]`|2|`[0,2,3]`|`[1]`|
+|`[0,1,1,1]`|1|`[1,2,3]`|`[0]`|
+|`[1,1,1,1]`|1|`[0,1,2,3]`|`[]`|
+
+- Need a function that `f(arrFills) = # of segments`
+  - idea ON-OFF flip flop
+    - Add one when `0->1` occurs; reset when `1->0`
+    - Time complexity: O(n)
+
+```julia
+#Julia
+function seg_conunt(arr)
+  count = 0 
+  n_seg = 0
+  for i in arr
+    if count == 0
+      if i == 1
+        count = 1
+        n_seg += 1
+      end
+    else
+      if i == 0
+        count = 0
+      end
+    end
+  end
+
+  return n_seg
+end
+```
 
 ## Create 2D array with double pointer and one malloc call
 

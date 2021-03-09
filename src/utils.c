@@ -109,3 +109,17 @@ dymarr* init_ids_int_arr(int arr[], int arr_size, int key){
 void close_ids_int_arr(dymarr* a){
     close_dymarr(a);
 }
+
+
+// Flip Flop
+int rising_FlipFlop(int* init_state, int new_state){
+    int output;
+    if (*init_state < new_state){ // Rising
+        output = 1;
+    }
+    else{ //init_state > new_state
+        output = 0;
+    }
+    *init_state = new_state; //update
+    return output;
+}
