@@ -92,6 +92,10 @@ void print_hint_str(hint);
 char* create_hint_str(hint);
 void close_hint_str(char*);
 
-
+//Create Problem 
+/** Nonogram creator with key in*/
+nogram create_nogram_scantf(void);
+/** NOnogram creator with txt file*/
+nogram create_nogram_fscantf(char* filename);
 
 #endif
