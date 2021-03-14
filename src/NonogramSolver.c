@@ -7,6 +7,9 @@
 hint init_hint(){
     hint h;
     h.nPoint = 0 ;
+    for(int i=0;i<MAX_LINES;i++){
+        h.pLens[i] = 0;
+    }
     return h;
 }
 
@@ -30,7 +33,7 @@ nogram init_nogram(nogram nm_, size2D size, hints H){
     for(int n=0;n<size.N;n++){
          HN.h[n] = H.h[n];
     }
-    for(int m=size.N;m<size.M;m++){
+    for(int m=size.N;m<(size.N + size.M);m++){
         HM.h[m-size.N] = H.h[m];
     }
 
@@ -147,8 +150,6 @@ int is_nogram_valid(nogram nm){
         for(int j=0;j<nm.size.M;j++)
             row_line[j] = nm.map[i][j];
 
-        if  (is_line_set(row_line, nm.size.M)==0)
-            return 0;
         if  (is_line_valid(row_line, nm.size.M, nm.Nhs.h[i])==0)
             return 0;
     }
@@ -158,9 +159,7 @@ int is_nogram_valid(nogram nm){
         for(int j=0;j<nm.size.N;j++)
             col_line[j] = nm.map[j][i];
 
-        if  (is_line_set(row_line, nm.size.N)==0)
-            return 0;
-        if  (is_line_valid(row_line, nm.size.N, nm.Mhs.h[i])==0)
+        if  (is_line_valid(col_line, nm.size.N, nm.Mhs.h[i])==0)
             return 0;
     }
 

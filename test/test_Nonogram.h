@@ -78,6 +78,14 @@ void test_create_nonogram(void){
     //nog = create_nogram_scantf();
     nog = create_nogram_fscantf("test/data/input_1.txt");
 
+    TEST_ASSERT(nog.Nhs.h[0].nPoint == 2);
+    TEST_ASSERT(nog.Nhs.h[1].nPoint == 2);
+    TEST_ASSERT(nog.Nhs.h[2].nPoint == 2);
+    TEST_ASSERT(nog.Nhs.h[3].nPoint == 1);
+    TEST_ASSERT(nog.Mhs.h[0].nPoint == 2);
+    TEST_ASSERT(nog.Mhs.h[1].nPoint == 2);
+    TEST_ASSERT(nog.Mhs.h[2].nPoint == 2);
+    TEST_ASSERT(nog.Mhs.h[3].nPoint == 2);
     // validate the content
     TEST_ASSERT(nog.size.N == 4);
     TEST_ASSERT(nog.size.M == 4);
@@ -125,7 +133,53 @@ void test_segment_measurement(void){
 }
 
 void test_verify_solution(void){
+    nogram nog;
+
+    //Input 1
+
+    //nog = create_nogram_scantf();
+    nog = create_nogram_fscantf("test/data/input_1.txt");
+
+    int a0[4] = {1,0,1,0};
+    int a1[4] = {0,1,0,1};
+    int a2[4] = {1,0,1,0};
+    int a3[4] = {1,1,1,1};
+
+    for(int i=0;i<4;i++)
+        nog.map[0][i] = a0[i];
+    for(int i=0;i<4;i++)
+        nog.map[1][i] = a1[i];
+    for(int i=0;i<4;i++)
+        nog.map[2][i] = a2[i];
+    for(int i=0;i<4;i++)
+        nog.map[3][i] = a3[i];
+
+    TEST_ASSERT(is_nogram_valid(nog) == 1);
+}
+
+void test_verify_solution2(void){
+    nogram nog;
+    // Input 2
+    nog = create_nogram_fscantf("test/data/input_2.txt");
+
+    int a0[] = {0,1,1,1,1};
+    int a1[] = {1,1,0,0,0};
+    int a2[] = {0,1,1,1,0};
+    int a3[] = {0,0,0,1,1};
+    int a4[] = {1,1,1,1,0};
     
+    for(int i=0;i<5;i++)
+        nog.map[0][i] = a0[i];
+    for(int i=0;i<5;i++)
+        nog.map[1][i] = a1[i];
+    for(int i=0;i<5;i++)
+        nog.map[2][i] = a2[i];
+    for(int i=0;i<5;i++)
+        nog.map[3][i] = a3[i];
+    for(int i=0;i<5;i++)
+        nog.map[4][i] = a4[i];
+
+    TEST_ASSERT(is_nogram_valid(nog) == 1);
 }
 
 #endif
