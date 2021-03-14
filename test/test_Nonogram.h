@@ -128,4 +128,9 @@ void test_verify_solution(void){
     
 }
 
+//Solve
+void test_greedy_algorithm(void){
+    //TODO
+}
+
 #endif

@@ -395,3 +395,8 @@ nogram create_nogram_fscantf(char* filename){
 
     return nog;
 }
+
+//Solver
+nogram solve_nonogram_greedy(nogram nog){
+    //TODO
+}

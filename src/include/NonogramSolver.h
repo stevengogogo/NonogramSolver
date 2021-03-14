@@ -110,4 +110,8 @@ nogram create_nogram_scantf(void);
 /** NOnogram creator with txt file*/
 nogram create_nogram_fscantf(char* filename);
 
+//Solve Nonogram
+/** Nonogram solver with greedy algorithm*/
+nogram solve_nonogram_greedy(nonogram);
+
 #endif
