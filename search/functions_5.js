@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['segment_5fnumber_60',['segment_number',['../NonogramSolver_8h.html#afd5e8266d0f0761447eb9d04bdd3546f',1,'segment_number(int line[], int len_line, int key):&#160;NonogramSolver.c'],['../NonogramSolver_8c.html#afd5e8266d0f0761447eb9d04bdd3546f',1,'segment_number(int line[], int len_line, int key):&#160;NonogramSolver.c']]],
-  ['str2int_61',['str2int',['../utils_8h.html#aa4f2c72ae18ee785a22fad9d7bc57b17',1,'str2int(char numstr):&#160;utils.c'],['../utils_8c.html#aa4f2c72ae18ee785a22fad9d7bc57b17',1,'str2int(char numstr):&#160;utils.c']]]
+  ['rising_5fflipflop_60',['rising_FlipFlop',['../utils_8h.html#a2930c011b7fc9518174494e3938cfbf2',1,'rising_FlipFlop(int *init_state, int new_state):&#160;utils.c'],['../utils_8c.html#a2930c011b7fc9518174494e3938cfbf2',1,'rising_FlipFlop(int *init_state, int new_state):&#160;utils.c']]],
+  ['rising_5fflipflop_5fnoupdate_61',['rising_FlipFlop_noupdate',['../utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455',1,'rising_FlipFlop_noupdate(int init_state, int new_state):&#160;utils.c'],['../utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455',1,'rising_FlipFlop_noupdate(int init_state, int new_state):&#160;utils.c']]]
 ];
