@@ -140,3 +140,4 @@ int falling_FlipFlop_noupdate(int init_state, int new_state){
         output=0;
     return output;
 }
+

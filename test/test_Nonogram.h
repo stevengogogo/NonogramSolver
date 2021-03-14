@@ -106,7 +106,15 @@ void test_segment_measurement(void){
         TEST_ASSERT(h.nPoint == A[i].n_seg);
     }
 
+    h = get_segments(A[15].arr, A[15].len);
+    TEST_ASSERT(h.pLens[0] == 4);
+
+    h = get_segments(A[14].arr, A[14].len);
+    TEST_ASSERT(h.pLens[0] == 3);
 }
 
+void test_verify_solution(void){
+    
+}
 
 #endif

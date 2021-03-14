@@ -139,23 +139,46 @@ int comp_size2D(size2D a, size2D b){
 
 //validation
 int is_nogram_valid(nogram nm){
-    //TODO
+    int row_line[nm.size.M];
+    int col_line[nm.size.N];
+
+    for(int i=0;i<nm.size.N;i++){
+        //copy row data
+        for(int j=0;j<nm.size.M;j++)
+            row_line[j] = nm.map[i][j];
+
+        if  (is_line_set(row_line, nm.size.M)==0)
+            return 0;
+        if  (is_line_valid(row_line, nm.size.M, nm.Nhs.h[i])==0)
+            return 0;
+    }
+    
+    for(int i=0;i<nm.size.M;i++){
+        //copy row data
+        for(int j=0;j<nm.size.N;j++)
+            col_line[j] = nm.map[j][i];
+
+        if  (is_line_set(row_line, nm.size.N)==0)
+            return 0;
+        if  (is_line_valid(row_line, nm.size.N, nm.Mhs.h[i])==0)
+            return 0;
+    }
+
+    return 1;
 }
 
 int is_line_valid(int line[], int len_line, hint h){
-    int N_seg;//number of segments
+    hint hl;//meausred hint from line
 
     // Check the line is well-defined
     if (is_line_set(line, len_line) == 0)
         return 0;
     
     // Check the number of segmentation
-    N_seg = segment_number(line, len_line, fill_val);
-    if (N_seg != h.nPoint)
+    hl = get_segments(line, len_line);
+
+    if (comp_hint(hl,h) == 0)
         return 0;
-
-    // Check the length of segments
-
     
     return 1;
 }

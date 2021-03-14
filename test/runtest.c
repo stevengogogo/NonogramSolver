@@ -15,6 +15,7 @@ TEST_LIST = {
     {"Nonogram printer", test_hint_printout},
     {"Nonogram validation", test_validity},
     {"Nonogram Segment measurement", test_segment_measurement},
+    {"Nonogram verify solution", test_verify_solution},
     {"Utility: Flipflop",test_utils_flipflop},
     {"Utility: Find IDs", test_utils_find_ID},
     {"Utility:Dynamical array", test_dymarr},
