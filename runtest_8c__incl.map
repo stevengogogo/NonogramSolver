@@ -1,13 +1,12 @@
 <map id="test/runtest.c" name="test/runtest.c">
-<area shape="rect" id="node1" title="Unit Testing with acutest." alt="" coords="79,5,178,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,304,65,331"/>
-<area shape="rect" id="node3" title=" " alt="" coords="97,155,171,181"/>
-<area shape="rect" id="node4" href="$test__utils_8h.html" title=" " alt="" coords="46,80,131,107"/>
-<area shape="rect" id="node10" href="$test__Nonogram_8h.html" title=" " alt="" coords="215,80,336,107"/>
-<area shape="rect" id="node5" href="$utils_8h.html" title="general usage" alt="" coords="113,229,214,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="268,304,336,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="361,304,425,331"/>
-<area shape="rect" id="node8" title=" " alt="" coords="181,304,244,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="90,304,157,331"/>
-<area shape="rect" id="node11" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="196,155,371,181"/>
+<area shape="rect" id="node1" title="Unit Testing with acutest." alt="" coords="67,5,166,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="28,304,88,331"/>
+<area shape="rect" id="node3" title=" " alt="" coords="84,155,159,181"/>
+<area shape="rect" id="node4" href="$test__utils_8h.html" title=" " alt="" coords="34,80,119,107"/>
+<area shape="rect" id="node9" href="$test__Nonogram_8h.html" title=" " alt="" coords="202,80,324,107"/>
+<area shape="rect" id="node5" href="$utils_8h.html" title="general usage" alt="" coords="95,229,196,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="206,304,274,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="303,304,367,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="117,304,180,331"/>
+<area shape="rect" id="node10" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="184,155,358,181"/>
 </map>

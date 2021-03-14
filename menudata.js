@@ -32,10 +32,11 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"c",url:"globals.html#index_c"},
+{text:"g",url:"globals.html#index_g"},
 {text:"h",url:"globals.html#index_h"},
 {text:"i",url:"globals.html#index_i"},
 {text:"k",url:"globals.html#index_k"},
-{text:"p",url:"globals.html#index_p"},
+{text:"r",url:"globals.html#index_r"},
 {text:"s",url:"globals.html#index_s"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

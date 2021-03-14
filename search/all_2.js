@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['hint_5',['hint',['../structhint.html',1,'']]],
-  ['hints_6',['hints',['../structhints.html',1,'']]],
-  ['hole_7',['hole',['../NonogramSolver_8h.html#a3c178e7725258aeed4168f59ac0eb185',1,'NonogramSolver.h']]]
+  ['get_5fsegments_3',['get_segments',['../NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552',1,'get_segments(int line[], int len_line):&#160;NonogramSolver.c'],['../NonogramSolver_8c.html#a27fe7bff76f35998088ce5017fb46552',1,'get_segments(int line[], int len_line):&#160;NonogramSolver.c']]]
 ];
