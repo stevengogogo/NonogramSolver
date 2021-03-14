@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hint_30',['hint',['../structhint.html',1,'']]],
-  ['hints_31',['hints',['../structhints.html',1,'']]]
+  ['hint_31',['hint',['../structhint.html',1,'']]],
+  ['hints_32',['hints',['../structhints.html',1,'']]]
 ];
