@@ -73,6 +73,15 @@ void test_validity(void){
     TEST_ASSERT(segment_number(line5, 4, 1) == 0);
 }
 
+void test_create_nonogram(void){
+    nogram nog;
+    //nog = create_nogram_scantf();
+    nog = create_nogram_fscantf("test/data/input_1.txt");
 
+    // validate the content
+    TEST_ASSERT(nog.size.N == 4);
+    TEST_ASSERT(nog.size.M == 4);
+    TEST_ASSERT(nog.Nhs.h[0].nPoint == 2);
+}
 
 #endif
