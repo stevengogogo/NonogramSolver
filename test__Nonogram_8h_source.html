@@ -174,14 +174,22 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        TEST_ASSERT(h.nPoint == A[i].n_seg);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    h = <a class="code" href="NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552">get_segments</a>(A[15].arr, A[15].len);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    TEST_ASSERT(h.pLens[0] == 4);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    h = <a class="code" href="NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552">get_segments</a>(A[14].arr, A[14].len);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    TEST_ASSERT(h.pLens[0] == 3);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> test_verify_solution(<span class="keywordtype">void</span>){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aNonogramSolver_8h_html"><div class="ttname"><a href="NonogramSolver_8h.html">NonogramSolver.h</a></div><div class="ttdoc">A Nonogram Solver with brutal-force algorithm.</div></div>
-<div class="ttc" id="aNonogramSolver_8h_html_a27fe7bff76f35998088ce5017fb46552"><div class="ttname"><a href="NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552">get_segments</a></div><div class="ttdeci">hint get_segments(int line[], int len_line)</div><div class="ttdef"><b>Definition:</b> NonogramSolver.c:191</div></div>
+<div class="ttc" id="aNonogramSolver_8h_html_a27fe7bff76f35998088ce5017fb46552"><div class="ttname"><a href="NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552">get_segments</a></div><div class="ttdeci">hint get_segments(int line[], int len_line)</div><div class="ttdef"><b>Definition:</b> NonogramSolver.c:214</div></div>
 <div class="ttc" id="aNonogramSolver_8h_html_a3a3d7c9a6322d83e19d3380dbbc6c4ab"><div class="ttname"><a href="NonogramSolver_8h.html#a3a3d7c9a6322d83e19d3380dbbc6c4ab">init_nogram</a></div><div class="ttdeci">nogram init_nogram(nogram, size2D, hints)</div><div class="ttdoc">Initiate nonogram problem.</div><div class="ttdef"><b>Definition:</b> NonogramSolver.c:13</div></div>
-<div class="ttc" id="aNonogramSolver_8h_html_afd5e8266d0f0761447eb9d04bdd3546f"><div class="ttname"><a href="NonogramSolver_8h.html#afd5e8266d0f0761447eb9d04bdd3546f">segment_number</a></div><div class="ttdeci">int segment_number(int line[], int len_line, int key)</div><div class="ttdef"><b>Definition:</b> NonogramSolver.c:180</div></div>
+<div class="ttc" id="aNonogramSolver_8h_html_afd5e8266d0f0761447eb9d04bdd3546f"><div class="ttname"><a href="NonogramSolver_8h.html#afd5e8266d0f0761447eb9d04bdd3546f">segment_number</a></div><div class="ttdeci">int segment_number(int line[], int len_line, int key)</div><div class="ttdef"><b>Definition:</b> NonogramSolver.c:203</div></div>
 <div class="ttc" id="astructhint_html"><div class="ttname"><a href="structhint.html">hint</a></div><div class="ttdef"><b>Definition:</b> NonogramSolver.h:24</div></div>
 <div class="ttc" id="astructhints_html"><div class="ttname"><a href="structhints.html">hints</a></div><div class="ttdef"><b>Definition:</b> NonogramSolver.h:30</div></div>
 <div class="ttc" id="astructnogram_html"><div class="ttname"><a href="structnogram.html">nogram</a></div><div class="ttdef"><b>Definition:</b> NonogramSolver.h:40</div></div>
