@@ -7,6 +7,9 @@
 hint init_hint(){
     hint h;
     h.nPoint = 0 ;
+    for(int i=0;i<MAX_LINES;i++){
+        h.pLens[i] = 0;
+    }
     return h;
 }
 
