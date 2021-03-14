@@ -1,9 +1,10 @@
 <map id="src/main.c" name="src/main.c">
-<area shape="rect" id="node1" title="Interface of the nonogram solver." alt="" coords="21,5,103,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="57,229,117,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="144,229,207,256"/>
-<area shape="rect" id="node4" href="$utils_8h.html" title="general usage" alt="" coords="125,155,226,181"/>
-<area shape="rect" id="node7" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="163,80,337,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="328,229,396,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="237,229,301,256"/>
+<area shape="rect" id="node1" title="Interface of the nonogram solver." alt="" coords="162,5,245,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,229,65,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="361,229,424,256"/>
+<area shape="rect" id="node4" href="$utils_8h.html" title="general usage" alt="" coords="114,155,215,181"/>
+<area shape="rect" id="node8" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="179,80,353,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="269,229,337,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="181,229,245,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="90,229,157,256"/>
 </map>
