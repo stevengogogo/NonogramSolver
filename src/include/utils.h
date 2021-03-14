@@ -12,8 +12,8 @@
 #include <unistd.h>
 
 //IO
+/** Print current directory*/
 void print_cwd(void);
-
 
 /*Compare two string. if identical returns 0. otherwise, return 0*/
 int striden(char* a, char* b);
