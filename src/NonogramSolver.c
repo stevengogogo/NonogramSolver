@@ -156,7 +156,7 @@ int is_nogram_valid(nogram nm){
         for(int j=0;j<nm.size.N;j++)
             col_line[j] = nm.map[j][i];
 
-        if  (is_line_valid(row_line, nm.size.N, nm.Mhs.h[i])==0)
+        if  (is_line_valid(col_line, nm.size.N, nm.Mhs.h[i])==0)
             return 0;
     }
 
