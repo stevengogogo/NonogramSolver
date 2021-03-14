@@ -137,7 +137,6 @@ int is_nogram_valid(nogram nm){
 }
 
 int is_line_valid(int line[], int len_line, hint h){
-    int valid=1;
     int N_seg;//number of segments
 
     // Check the line is well-defined
@@ -148,10 +147,8 @@ int is_line_valid(int line[], int len_line, hint h){
     N_seg = segment_number(line, len_line, fill_val);
     if (N_seg != h.nPoint)
         return 0;
-
-    //TODO
     
-    return valid;
+    return 1;
 }
 
 int is_line_set(int line[], int len_line){

@@ -68,7 +68,7 @@ int comp_hints(hints, hints);
 int comp_hint(hint, hint);
 int comp_size2D(size2D, size2D);
 
-/**verification: 1 (valid); 0 otherwise */
+/** Verification: 1 (valid); 0 otherwise */
 int is_nogram_valid(nogram nm);
 /** Check the validity of a line with the hint. 1:Valid, 0:Invalid*/
 int is_line_valid(int line[], int len_line, hint);
