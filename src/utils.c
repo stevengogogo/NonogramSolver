@@ -112,14 +112,31 @@ void close_ids_int_arr(dymarr* a){
 
 
 // Flip Flop
+
+/** Rising Flip flop. Return 1 when new state is rising. Noted that this fucntion update the init_state*/
 int rising_FlipFlop(int* init_state, int new_state){
     int output;
-    if (*init_state < new_state){ // Rising
-        output = 1;
-    }
-    else{ //init_state > new_state
-        output = 0;
-    }
+    output = rising_FlipFlop_noupdate(*init_state, new_state);
     *init_state = new_state; //update
+    return output;
+}
+
+/**Rising Flip flop but doesn't update the init_state*/
+int rising_FlipFlop_noupdate(int init_state, int new_state){
+    int output;
+    if (init_state<new_state)
+        output=1;
+    else
+        output=0;
+    return output;
+}
+
+
+int falling_FlipFlop_noupdate(int init_state, int new_state){
+    int output;
+    if (init_state>new_state)
+        output=1;
+    else
+        output=0;
     return output;
 }

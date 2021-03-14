@@ -25,7 +25,6 @@ void killstr(char*);
 int findfirst_int_arr(int arr[], int arr_size, int key);
 
 
-
 /**
  * @brief Dynamical Array
  * @param array Interger array
@@ -60,5 +59,8 @@ void killstr(char*);
 
 //**Rising flip flop. return 1 when switch ON. And change the init_state*/
 int rising_FlipFlop(int* init_state, int new_state);
+
+int rising_FlipFlop_noupdate(int init_state, int new_state);
+int falling_FlipFlop_noupdate(int init_state, int new_state);
 
 #endif

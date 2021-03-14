@@ -4,6 +4,12 @@
 
 #include "include/NonogramSolver.h"
 
+hint init_hint(){
+    hint h;
+    h.nPoint = 0 ;
+    return h;
+}
+
 nogram init_nogram(nogram nm_, size2D size, hints H){
     //number of hint is N+M
     assert(  H.len == (size.N + size.M) );
@@ -46,7 +52,7 @@ nogram init_nogram_undef(nogram nm){
 
 hint create_hint(int sizes[],int nPoint){
     assert(nPoint<MAX_LINES);
-    hint h;
+    hint h = init_hint();
     h.nPoint =  nPoint;
     for(int i=0;i<nPoint;i++){
         h.pLens[i] = sizes[i];
@@ -131,7 +137,7 @@ int comp_size2D(size2D a, size2D b){
     }
 }
 
-//verification
+//validation
 int is_nogram_valid(nogram nm){
     //TODO
 }
@@ -147,6 +153,9 @@ int is_line_valid(int line[], int len_line, hint h){
     N_seg = segment_number(line, len_line, fill_val);
     if (N_seg != h.nPoint)
         return 0;
+
+    // Check the length of segments
+
     
     return 1;
 }
@@ -177,6 +186,41 @@ int segment_number(int line[], int len_line, int key){
         N_seg += rising_FlipFlop(&init_state, new_state);
     }
     return N_seg;
+}
+
+hint get_segments(int line[], int len_line){
+    int init_state = 0;
+    int new_state;
+    int N_seg = 0;
+    int len = 0;
+    int is_rising, is_falling;
+    int count_ON = 0;
+    int pLens[MAX_LINES] = {0};
+    hint h = init_hint();
+
+    for(int i=0;i<len_line;i++){
+        new_state = line[i]; 
+        is_rising = rising_FlipFlop_noupdate(init_state, new_state);
+        is_falling = falling_FlipFlop_noupdate(init_state, new_state);
+        //update 
+        init_state = new_state;
+
+        if (is_rising == 1){
+            N_seg += 1;
+            count_ON=1; //Start counting and set index of segment
+        }
+        if (is_falling == 1){
+            count_ON = 0;
+        }
+
+        assert( ((is_rising*is_falling) == 0 ) ); //never rising and falling at the same time
+        
+        if (count_ON == 1)
+            h.pLens[N_seg - 1] += 1;
+    }
+
+    h.nPoint = N_seg;
+    return h;
 }
 
 

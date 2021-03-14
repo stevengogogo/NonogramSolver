@@ -45,6 +45,8 @@ typedef struct {
 } nogram;
 
 
+hint init_hint();
+
 /** @brief Initiate nonogram problem */
 nogram init_nogram(nogram,size2D,hints);
 
@@ -77,6 +79,9 @@ int is_line_set(int line[], int len_line);
 
 /** Count the number of segments in a array */
 int segment_number(int line[], int len_line, int key);
+
+/** Convert a number line into a hint */
+hint get_segments(int line[], int len_line);
 
 //Display
 char bool2sym(int);

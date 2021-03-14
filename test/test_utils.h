@@ -10,13 +10,23 @@
 
 void test_utils_flipflop(void){
     int init = 0;
-    TEST_ASSERT( rising_FlipFlop(&init, 0) == 0 );
+    TEST_ASSERT(rising_FlipFlop(&init, 0) == 0 );
     init = 1;
-    TEST_ASSERT( rising_FlipFlop(&init, 0) == 0 );
+    TEST_ASSERT(rising_FlipFlop(&init, 0) == 0 );
     init = 0;
-    TEST_ASSERT( rising_FlipFlop(&init, 1) == 1 );
+    TEST_ASSERT(rising_FlipFlop(&init, 1) == 1 );
     init = 1;
-    TEST_ASSERT( rising_FlipFlop(&init, 1) == 0 );
+    TEST_ASSERT(rising_FlipFlop(&init, 1) == 0 );
+
+    TEST_ASSERT(rising_FlipFlop_noupdate(1,0) == 0);
+    TEST_ASSERT(rising_FlipFlop_noupdate(1,1) == 0);
+    TEST_ASSERT(rising_FlipFlop_noupdate(0,1) == 1);
+    TEST_ASSERT(rising_FlipFlop_noupdate(0,0) == 0);
+
+    TEST_ASSERT(falling_FlipFlop_noupdate(0,0) == 0);
+    TEST_ASSERT(falling_FlipFlop_noupdate(0,1) == 0);
+    TEST_ASSERT(falling_FlipFlop_noupdate(1,0) == 1);
+    TEST_ASSERT(falling_FlipFlop_noupdate(1,1) == 0);
 }
 
 void test_utils_find_ID(void)

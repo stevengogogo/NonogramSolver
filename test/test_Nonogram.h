@@ -73,5 +73,40 @@ void test_validity(void){
     TEST_ASSERT(segment_number(line5, 4, 1) == 0);
 }
 
+void test_segment_measurement(void){
+    struct array{
+        int arr[4];
+        int len;
+        int n_seg;
+    };
+
+    struct array A[] = {
+        {{0,0,0,0},4,0},
+        {{1,0,0,0},4,1},
+        {{0,1,0,0},4,1},
+        {{1,1,0,0},4,1},
+        {{0,0,1,0},4,1},
+        {{1,0,1,0},4,2},
+        {{0,1,1,0},4,1},
+        {{1,1,1,0},4,1},
+        {{0,0,0,1},4,1},
+        {{1,0,0,1},4,2},
+        {{0,1,0,1},4,2},
+        {{1,1,0,1},4,2},
+        {{0,0,1,1},4,1},
+        {{1,0,1,1},4,2},
+        {{0,1,1,1},4,1},
+        {{1,1,1,1},4,1}
+    };
+    int A_len = 16;
+    hint h;
+
+    for(int i=0;i<A_len;i++){
+        h = get_segments(A[i].arr, A[i].len);
+        TEST_ASSERT(h.nPoint == A[i].n_seg);
+    }
+
+}
+
 
 #endif
