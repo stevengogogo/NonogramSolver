@@ -159,3 +159,4 @@ Use `realloc` to increase or shrink the size.
 4. Compare with `memcpy` [[Tutorial](http://tw.gitbook.net/c_standard_library/c_function_memcmp.html)]
     - 不能用於 struct [[reason](https://stackoverflow.com/questions/141720/how-do-you-compare-structs-for-equality-in-c)]
 6. Memory management in C [[tutorial](https://www.guru99.com/c-dynamic-memory-allocation.html#5)]
+7. fscanf: reading file in C. [[greekforgeek](https://www.geeksforgeeks.org/scanf-and-fscanf-in-c-simple-yet-poweful/)]

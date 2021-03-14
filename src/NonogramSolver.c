@@ -256,3 +256,39 @@ char* create_hint_str(hint h){
 void close_hint_str(char* hstr){
     killstr(hstr);
 }
+
+
+//Create nonogram by interaction
+nogram create_nogram_scantf(void){
+    nogram nog;
+    size2D s;
+    hints H;
+    int frag_n; //number of fragments
+    int frag_len;
+
+    //Map Size
+    scanf("%d%d",&s.N,&s.M);
+    assert( (s.N<MAX_LINES & s.M<MAX_LINES));
+
+    H.len = s.N+s.M;
+
+    // Hints: N by M
+    for(int i=0;i<H.len;i++){
+        //Set number of fragments
+        scanf("%d", &frag_n);
+        assert(frag_n>=0);
+        
+        H.h[i].nPoint = frag_n;
+        
+        //Set lengths of fragments
+        for(int j=0;j<frag_n;j++){
+            scanf("%d",&frag_len);
+            assert(frag_len>0);//no zero length
+            H.h[i].pLens[j] = frag_len;
+        }
+    }
+
+    nog = init_nogram(nog, s, H);
+
+    return nog;
+}

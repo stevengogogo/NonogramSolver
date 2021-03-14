@@ -21,6 +21,11 @@
 #define MAX_LINES 10
 #define MAX_HINT_NUM 20
 
+/**
+ * @brief A hint element
+ * @param nPoint Number of fragments
+ * @param pLens lengths of fragments
+ */
 typedef struct {
     int nPoint;
     int pLens[MAX_LINES];
@@ -78,6 +83,8 @@ int is_line_set(int line[], int len_line);
 /** Count the number of segments in a array */
 int segment_number(int line[], int len_line, int key);
 
+
+
 //Display
 char bool2sym(int);
 void print_nogram_str(nogram);
@@ -87,6 +94,12 @@ void print_hint_str(hint);
 char* create_hint_str(hint);
 void close_hint_str(char*);
 
+
+
+
+//Create Problem 
+/** Nonogram keyin creator*/
+nogram create_nogram_scantf(void);
 
 
 #endif

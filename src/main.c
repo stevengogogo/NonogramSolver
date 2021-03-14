@@ -11,7 +11,9 @@
 
 /* * @brief Interface */
 int main()
-{
-
+{   
+    nogram nog;
+    nog = create_nogram_scantf();
+    print_nogram_str(nog);
     return 0;
 }
