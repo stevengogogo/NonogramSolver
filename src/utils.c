@@ -4,6 +4,13 @@
 
 #include "include/utils.h"
 
+//IO
+void print_cwd(void){
+    char buf[80];
+    getcwd(buf, sizeof(buf));
+    printf("current working directory : %s\n", buf);
+}
+
 /*Compare two string. if identical returns 0. otherwise, return 0*/
 int striden(char* a, char* b){
     int diff;

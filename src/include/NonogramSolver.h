@@ -21,6 +21,11 @@
 #define MAX_LINES 10
 #define MAX_HINT_NUM 20
 
+/**
+ * @brief A hint element
+ * @param nPoint Number of fragments
+ * @param pLens lengths of fragments
+ */
 typedef struct {
     int nPoint;
     int pLens[MAX_LINES];
@@ -91,6 +96,13 @@ void close_nogram_str(char*);
 void print_hint_str(hint);
 char* create_hint_str(hint);
 void close_hint_str(char*);
+
+//Create Problem 
+/** Nonogram creator with key in*/
+nogram create_nogram_scantf(void);
+/** NOnogram creator with txt file*/
+nogram create_nogram_fscantf(char* filename);
+
 
 //Create Problem 
 /** Nonogram creator with key in*/
