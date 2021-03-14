@@ -98,8 +98,9 @@ void close_hint_str(char*);
 
 
 //Create Problem 
-/** Nonogram keyin creator*/
+/** Nonogram creator with key in*/
 nogram create_nogram_scantf(void);
-
+/** NOnogram creator with txt file*/
+nogram create_nogram_fscantf(char* filename);
 
 #endif

@@ -9,6 +9,10 @@
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+//IO
+void print_cwd(void);
 
 
 /*Compare two string. if identical returns 0. otherwise, return 0*/
