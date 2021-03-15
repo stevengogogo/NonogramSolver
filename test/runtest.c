@@ -19,7 +19,7 @@ TEST_LIST = {
     {"Nonogram creation", test_create_nonogram},
     {"Nonogram verify solution", test_verify_solution},
     {"Solve Nonogram", test_greedy_algorithm},
-    {"Read file", read_file},
+    {"Read file", test_create_nogram_with_answer},
     {"Utility: Flipflop",test_utils_flipflop},
     {"Utility: Find IDs", test_utils_find_ID},
     {"Utility:Dynamical array", test_dymarr},

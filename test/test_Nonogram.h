@@ -151,6 +151,11 @@ void read_file(void){
     fclose(stream);
 }
 
+void test_create_nogram_with_answer(void){
+    nogram nog;
+    nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
+}
+
 void test_verify_solution(void){
     
 }

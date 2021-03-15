@@ -30,7 +30,7 @@ nogram init_nogram(nogram nm_, size2D size, hints H){
     for(int n=0;n<size.N;n++){
          HN.h[n] = H.h[n];
     }
-    for(int m=size.N;m<size.M;m++){
+    for(int m=size.N;m<(size.N + size.M);m++){
         HM.h[m-size.N] = H.h[m];
     }
 
@@ -158,9 +158,9 @@ int is_nogram_valid(nogram nm){
         for(int j=0;j<nm.size.N;j++)
             col_line[j] = nm.map[j][i];
 
-        if  (is_line_set(row_line, nm.size.N)==0)
+        if  (is_line_set(col_line, nm.size.N)==0)
             return 0;
-        if  (is_line_valid(row_line, nm.size.N, nm.Mhs.h[i])==0)
+        if  (is_line_valid(col_line, nm.size.N, nm.Mhs.h[i])==0)
             return 0;
     }
 
@@ -410,7 +410,7 @@ nogram create_nogram_fscantf(char* filename){
         
         //Set lengths of fragments
         for(int j=0;j<frag_n;j++){
-            fscanf(fptr, "%d",&frag_len);
+            assert(fscanf(fptr, "%d",&frag_len) != EOF);
             assert(frag_len>0);//no zero length
             H.h[i].pLens[j] = frag_len;
         }
@@ -433,12 +433,19 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
     FILE* fpt = fopen(output_fn, "r");
     assert(fpt!=NULL);
+    char line[MAX_LINES + 3];
+    int a;
 
     for (int i=0; i<nptr->size.N;i++){
-        for(int j=0;j<nptr->size.M;j++)
-            ;
-            //fscanf("%d");
-            //nptr->map[i][j] = ;
+        if ((fscanf(fpt, "%[^\n]", line))== EOF){
+            printf("Invalid reading");
+        }
+        fgetc(fpt); 
+
+        for(int j=0;j<nptr->size.M;j++){
+            a = convert_fill2num(line[j]);
+            nptr->map[i][j] = a;
+        }
     }
     fclose(fpt);
 }
