@@ -151,6 +151,7 @@ void read_file(void){
     fclose(stream);
 }
 
+/** Use input and output file to create a valid nonogram. [Ground truth]*/
 void test_create_nogram_with_answer(void){
     nogram nog;
     nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
