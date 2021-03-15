@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['num2loc_72',['num2loc',['../NonogramSolver_8c.html#aafb3b3c7b0d57e0c6bded288cd628d9d',1,'num2loc(size2D *loc, int *i, size2D *map_size):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#aafb3b3c7b0d57e0c6bded288cd628d9d',1,'num2loc(size2D *loc, int *i, size2D *map_size):&#160;NonogramSolver.c']]]
+  ['killstr_72',['killstr',['../utils_8c.html#aaaf78bb2731b65610be28a3c5f45fcdb',1,'killstr(char *str):&#160;utils.c'],['../utils_8h.html#ab5c6e2e3b2ab088637157914457d22f8',1,'killstr(char *):&#160;utils.c']]]
 ];

@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['killstr_71',['killstr',['../utils_8c.html#aaaf78bb2731b65610be28a3c5f45fcdb',1,'killstr(char *str):&#160;utils.c'],['../utils_8h.html#ab5c6e2e3b2ab088637157914457d22f8',1,'killstr(char *):&#160;utils.c']]]
+  ['init_5fids_5fint_5farr_65',['init_ids_int_arr',['../utils_8c.html#aac4c9f71325688877f31fbf7bfcc084a',1,'init_ids_int_arr(int arr[], int arr_size, int key):&#160;utils.c'],['../utils_8h.html#aac4c9f71325688877f31fbf7bfcc084a',1,'init_ids_int_arr(int arr[], int arr_size, int key):&#160;utils.c']]],
+  ['init_5fnogram_66',['init_nogram',['../NonogramSolver_8c.html#a8f0909cae61284edf79fde63edbb42df',1,'init_nogram(nogram nm_, size2D size, hints H):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a3a3d7c9a6322d83e19d3380dbbc6c4ab',1,'init_nogram(nogram, size2D, hints):&#160;NonogramSolver.c']]],
+  ['init_5fnogram_5fundef_67',['init_nogram_undef',['../NonogramSolver_8c.html#a93e64fa482ecd348765dbc2ab0d2cb7c',1,'init_nogram_undef(nogram nm):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a1cbee4c38d5117b41cc87e30a2235d2a',1,'init_nogram_undef(nogram):&#160;NonogramSolver.c']]],
+  ['int2str_68',['int2str',['../utils_8c.html#ac478ba0bf9d33eff2a18dffeb465b6fb',1,'int2str(char *s, int num):&#160;utils.c'],['../utils_8h.html#ac478ba0bf9d33eff2a18dffeb465b6fb',1,'int2str(char *s, int num):&#160;utils.c']]],
+  ['is_5fline_5fset_69',['is_line_set',['../NonogramSolver_8c.html#a4e8400dab378cadbff8f1c5da5c45fcd',1,'is_line_set(int line[], int len_line):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a4e8400dab378cadbff8f1c5da5c45fcd',1,'is_line_set(int line[], int len_line):&#160;NonogramSolver.c']]],
+  ['is_5fline_5fvalid_70',['is_line_valid',['../NonogramSolver_8c.html#ad552076fad9497d6422f1a3d897978fe',1,'is_line_valid(int line[], int len_line, hint h):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a51a29a16a29259f0b66cf0e826c63de1',1,'is_line_valid(int line[], int len_line, hint):&#160;NonogramSolver.c']]],
+  ['is_5fnogram_5fvalid_71',['is_nogram_valid',['../NonogramSolver_8c.html#aaffd3e8278101375186ced056dbe1e13',1,'is_nogram_valid(nogram *nm):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#aaffd3e8278101375186ced056dbe1e13',1,'is_nogram_valid(nogram *nm):&#160;NonogramSolver.c']]]
 ];

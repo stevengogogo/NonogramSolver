@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fsegments_8',['get_segments',['../NonogramSolver_8c.html#a27fe7bff76f35998088ce5017fb46552',1,'get_segments(int line[], int len_line):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a27fe7bff76f35998088ce5017fb46552',1,'get_segments(int line[], int len_line):&#160;NonogramSolver.c']]]
+  ['find_5fnogram_5fempty_8',['find_nogram_empty',['../NonogramSolver_8c.html#a5360501fa9e663350ada22f4b616e48b',1,'find_nogram_empty(size2D *locE, nogram *nog):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#a5360501fa9e663350ada22f4b616e48b',1,'find_nogram_empty(size2D *locE, nogram *nog):&#160;NonogramSolver.c']]]
 ];
