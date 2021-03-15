@@ -454,6 +454,49 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 
 //Solver
-void solve_nonogram_greedy(nogram* nog){
-    //TODO
+int solve_nonogram_greedy(nogram* nog){
+    size2D cell;
+    int succeed;
+    cell = find_nogram_empty(nog);
+
+    if (cell.M == -1){
+        if (is_nogram_valid(*nog) == 1){
+            printf_map(*nog);
+            return 1;
+        }
+        else
+            return 0;
+    }
+    else {
+        nog->map[cell.N][cell.M] = fill_val;
+        succeed = solve_nonogram_greedy(nog);
+        if (succeed==1)
+            return 1;
+        nog->map[cell.N][cell.M] = hole_val;
+        succeed = solve_nonogram_greedy(nog);
+        if (succeed==1)
+            return 1;
+        nog->map[cell.N][cell.M] = Default_Site_Val;
+    }
+    return 0;
+}
+
+//status checking
+size2D find_nogram_empty(nogram* nog){
+    int cell;
+    size2D locE;
+    for(int i=0;i<nog->size.N;i++){
+        for(int j=0;j<nog->size.M;j++){
+            cell = nog->map[i][j];
+            if (cell==Default_Site_Val){
+                locE.N = i;
+                locE.M = j;
+                return locE;
+            }
+        }
+    }
+
+    locE.N = -1;
+    locE.M = -1;
+    return locE;
 }

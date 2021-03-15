@@ -12,6 +12,8 @@
 int main()
 {
     nogram nog;
-    nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
+    
+    nog = create_nogram_scantf();
+    solve_nonogram_greedy(&nog);
     return 0;
 }
