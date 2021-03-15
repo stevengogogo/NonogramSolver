@@ -7,7 +7,7 @@
 
 #include <string.h>
 #include "acutest.h"
-#include "include/NonogramSolver.h"
+#include "NonogramSolver.h"
 
 /*Create a nonogram problem*/
 void test_nonogram_struct(void){
