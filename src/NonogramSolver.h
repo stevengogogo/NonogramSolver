@@ -133,7 +133,7 @@ nogram create_nogram_fscantf(char* filename);
 /** Wrapper of nonogram solver*/
 int solve_nonogram(nogram* nog);
 /** Nonogram solver with greedy algorithm*/
-int solve_nonogram_greedy(nogram* nog, arrL* empts);
+int solve_nonogram_greedy(nogram* nog, arrL empts);
 
 //Status checking
 

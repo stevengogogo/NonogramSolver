@@ -478,7 +478,7 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 //Solver
 
-int solve_nonogram_greedy(nogram* nog, arrL* empts){
+int solve_nonogram_greedy(nogram* nog, arrL empts){
     
     size2D cell = {
         .M=0,
@@ -488,7 +488,7 @@ int solve_nonogram_greedy(nogram* nog, arrL* empts){
     int succeed=0;
     
 
-    if (empts->len==0){
+    if (empts.len==0){
         if (is_nogram_valid(nog) == 1){
             return 1;
         }
@@ -496,7 +496,7 @@ int solve_nonogram_greedy(nogram* nog, arrL* empts){
             return 0;
     }
     else {
-        cell_i = pop_arrL(empts);
+        cell_i = pop_arrL(&empts);
         num2loc(&cell, &cell_i, &nog->size);
         nog->map[cell.N][cell.M] = fill_val;
         succeed = solve_nonogram_greedy(nog, empts);
@@ -507,7 +507,7 @@ int solve_nonogram_greedy(nogram* nog, arrL* empts){
         if (succeed==1)
             return 1;
         nog->map[cell.N][cell.M] = Default_Site_Val;
-        insert_arrL(empts, cell.N*cell.M);
+        insert_arrL(&empts, cell.N*cell.M);
     }
     return 0;
 }
@@ -520,7 +520,7 @@ int solve_nonogram(nogram* nog){
         insert_arrL(&empts, i);
     }
 
-    solve_nonogram_greedy(nog, &empts);
+    solve_nonogram_greedy(nog, empts);
 }
 
 void num2loc(size2D* loc,int* i, size2D* map_size){
