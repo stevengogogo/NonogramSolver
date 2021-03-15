@@ -248,23 +248,48 @@ hint get_segments(int line[], int len_line){
 
 
 //Display
-char bool2sym(int a){
-    char as;
-    if (a == fill_val){
-        return fill;
-    }
-    else if(a==hole_val){
-        return hole;
-    }
-    else if (a==Default_Site_Val | a==Undef_Site_Val){
-        int2str(&as, a);
-        return as;
-    }
-    else {
-        printf("Map value undefine");
-        exit(-1);
+void printf_map(nogram nog){
+    char s;
+    for(int i=0;i<nog.size.N;i++){
+        for(int j=0;j<nog.size.M;j++){
+            s = convert_num2fill(nog.map[i][j]);
+            printf("%c", s);
+        }
+        printf("\n");
     }
 }
+
+char convert_num2fill(int a){
+    char s;
+    if (a==fill_val)
+        s = fill;
+    else if(a==hole_val)
+        s = hole;
+    else if(a==Undef_Site_Val)
+        s = 'U'; //undefined site
+    else if(a==Default_Site_Val)
+        s = 'D'; //Unchanged site
+    else 
+        s = 'R'; // error
+    return s;
+}
+
+int convert_fill2num(char s){
+    int a;
+    if (s==fill)
+        a = 1;
+    else if (s==hole)
+        a = 0;
+    else if (s=='U')
+        a = Undef_Site_Val;
+    else if (s=='D')
+        a = Default_Site_Val;
+    else 
+        a = -1;
+    return a;
+}
+
+
 void print_nogram_str(nogram nm){
     char* nogram_str;
     nogram_str = create_nogram_str(nm);
@@ -280,11 +305,11 @@ char* create_nogram_str(nogram nm){
 
     //Save values
     for(int n=0;n<nm.size.N;n++){
-        strncat(mapstr, "\n", sizeof("\n"));
         for(int m=0;m<nm.size.M;m++){
-            val = bool2sym(nm.map[n][m]);
+            val = convert_num2fill(nm.map[n][m]);
             strncat(mapstr, &val, sizeof(char));
         }
+        strncat(mapstr, "\n", sizeof("\n"));
     }
 
     return mapstr;
@@ -395,6 +420,30 @@ nogram create_nogram_fscantf(char* filename){
 
     return nog;
 }
+
+nogram create_nogram_with_answer(char* input_fn, char* output_fn){
+    nogram nog;
+    nog = create_nogram_fscantf(input_fn);
+    set_nonogram_answer(&nog, output_fn);
+    assert(is_nogram_valid(nog) == 1);
+    return nog;
+}
+
+void set_nonogram_answer(nogram* nptr, char* output_fn){
+
+    FILE* fpt = fopen(output_fn, "r");
+    assert(fpt!=NULL);
+
+    for (int i=0; i<nptr->size.N;i++){
+        for(int j=0;j<nptr->size.M;j++)
+            ;
+            //fscanf("%d");
+            //nptr->map[i][j] = ;
+    }
+    fclose(fpt);
+}
+
+
 
 //Solver
 nogram solve_nonogram_greedy(nogram nog){

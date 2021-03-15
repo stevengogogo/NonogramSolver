@@ -89,7 +89,12 @@ int segment_number(int line[], int len_line, int key);
 hint get_segments(int line[], int len_line);
 
 //Display
-char bool2sym(int);
+/** Print out the map with O and _*/
+void printf_map(nogram);
+/** * Convert integer to symbol in nonogram*/
+char convert_num2fill(int);
+/** * Convert symbol to integer*/
+int convert_fill2num(char);
 void print_nogram_str(nogram);
 char* create_nogram_str(nogram);
 void close_nogram_str(char*);
@@ -100,8 +105,12 @@ void close_hint_str(char*);
 //Create Problem 
 /** Nonogram creator with key in*/
 nogram create_nogram_scantf(void);
-/** NOnogram creator with txt file*/
+/** Nonogram creator with txt file*/
 nogram create_nogram_fscantf(char* filename);
+/** Nonogram creator with input and output file. The created nonogram is assert valid*/
+nogram create_nogram_with_answer(char* input_fn, char* output_fn);
+/** Use output file to set the map of nogram*/
+void set_nonogram_answer(nogram*, char* output_fn);
 
 
 //Create Problem 
@@ -112,6 +121,6 @@ nogram create_nogram_fscantf(char* filename);
 
 //Solve Nonogram
 /** Nonogram solver with greedy algorithm*/
-nogram solve_nonogram_greedy(nonogram);
+nogram solve_nonogram_greedy(nogram);
 
 #endif

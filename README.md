@@ -152,6 +152,27 @@ https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 
 Use `realloc` to increase or shrink the size.
 
+
+## How to read line in a file 
+
+```c
+void read_file(void){
+
+    FILE *stream = fopen("test/data/output_1.txt", "r");
+    char line[80];
+
+    while ((fscanf(stream, "%[^\n]", line))!= EOF)
+    {
+        fgetc(stream); // Reads in '\n' character and moves file
+        // stream past delimiting character
+        printf("%s \n", line);
+    }
+
+    fclose(stream);
+}
+
+```
+
 ## Reference
 1. 2D array construction. [[GreekforGeek](https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/)]
 2. Git tag. [[Blog](https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%A8%99%E7%B1%A4)]
@@ -160,3 +181,5 @@ Use `realloc` to increase or shrink the size.
     - 不能用於 struct [[reason](https://stackoverflow.com/questions/141720/how-do-you-compare-structs-for-equality-in-c)]
 6. Memory management in C [[tutorial](https://www.guru99.com/c-dynamic-memory-allocation.html#5)]
 7. fscanf: reading file in C. [[greekforgeek](https://www.geeksforgeeks.org/scanf-and-fscanf-in-c-simple-yet-poweful/)]
+8. How to pass 2D array. [[GreekforGeek](https://www.geeksforgeeks.org/pass-2d-array-parameter-c/)]
+
