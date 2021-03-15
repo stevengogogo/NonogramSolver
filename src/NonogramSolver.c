@@ -453,6 +453,6 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 
 //Solver
-nogram solve_nonogram_greedy(nogram nog){
+void solve_nonogram_greedy(nogram* nog){
     //TODO
 }

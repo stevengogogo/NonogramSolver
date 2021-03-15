@@ -121,6 +121,6 @@ nogram create_nogram_fscantf(char* filename);
 
 //Solve Nonogram
 /** Nonogram solver with greedy algorithm*/
-nogram solve_nonogram_greedy(nogram);
+void solve_nonogram_greedy(nogram*);
 
 #endif
