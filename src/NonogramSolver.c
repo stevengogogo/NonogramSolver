@@ -452,66 +452,68 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 
 
-//status checking
-size2D find_nogram_empty(nogram* nog, int* cell_i){
-    int cell;
-    size2D locE;
-    for(int i=0;i<nog->size.N;i++){
-        for(int j=0;j<nog->size.M;j++){
-            cell = nog->map[i][j];
-            if (cell==Default_Site_Val){
-                locE.N = i;
-                locE.M = j;
-                return locE;
-            }
-        }
-    }
 
-    locE.N = -1;
-    locE.M = -1;
-    return locE;
-}
 
 
 
 //Solver
 
-int solve_nonogram_greedy(nogram* nog, int* cell_i,int* succeed, size2D* cell){
-   
+int solve_nonogram_greedy(nogram* nog){
+    
+    size2D cell;
+    int succeed=0;
+    
+    find_nogram_empty(&cell, nog);
 
-    if (*cell_i == ( nog->total_cells - 1)){
+    if (cell.M==-1){
         if (is_nogram_valid(nog) == 1){
-            //printf_map(*nog);
             return 1;
         }
         else
             return 0;
     }
     else {
-        num2loc(cell, cell_i, &nog->size);
-
-        nog->map[cell->N][cell->M] = fill_val;
-        *succeed = solve_nonogram_greedy(nog, cell_i, succeed, cell);
-        if (*succeed==1)
+        nog->map[cell.N][cell.M] = fill_val;
+        succeed = solve_nonogram_greedy(nog);
+        if (succeed==1)
             return 1;
-        nog->map[cell->N][cell->M] = hole_val;
-        *succeed = solve_nonogram_greedy(nog, cell_i, succeed, cell);
-        if (*succeed==1)
+        nog->map[cell.N][cell.M] = hole_val;
+        succeed = solve_nonogram_greedy(nog);
+        if (succeed==1)
             return 1;
-        nog->map[cell->N][cell->M] = Default_Site_Val;
+        nog->map[cell.N][cell.M] = Default_Site_Val;
     }
     return 0;
 }
 
 int solve_nonogram(nogram* nog){
-    int* cell_i=0;
-    int* succeed = 0;
-    size2D* cell;
 
-    solve_nonogram_greedy(nog, cell_i,succeed,cell);
+
+    solve_nonogram_greedy(nog);
 }
 
 void num2loc(size2D* loc,int* i, size2D* map_size){
     loc->N = *i / map_size->M;
     loc->M = *i % map_size->M;
+}
+
+void find_nogram_empty(size2D* locE, nogram* nog){
+    int b=0;
+    for(int i=0;i<nog->size.N;i++){
+        for(int j=0;j<nog->size.M;j++){
+            if (nog->map[i][j]==Default_Site_Val){
+                locE->N = i;
+                locE->M = j;
+                b=1;
+                break;
+            }
+        }
+        if (b==1)
+            break;
+    }
+
+    if (b!=1){ //no empty site found
+    locE->N = -1;
+    locE->M = -1;
+    }
 }

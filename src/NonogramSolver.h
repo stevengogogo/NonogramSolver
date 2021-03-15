@@ -124,12 +124,13 @@ nogram create_nogram_fscantf(char* filename);
 /** Wrapper of nonogram solver*/
 int solve_nonogram(nogram* nog);
 /** Nonogram solver with greedy algorithm*/
-int solve_nonogram_greedy(nogram* nog, int* cell_i, int* succeed, size2D* cell);
+int solve_nonogram_greedy(nogram* nog);
 
 //Status checking
 
 
 /** Return location with index*/
+void find_nogram_empty(size2D* locE, nogram* nog);
 void num2loc(size2D* loc,int* i, size2D* map_size);
 
 #endif
