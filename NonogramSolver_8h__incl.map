@@ -1,5 +1,5 @@
-<map id="src/include/NonogramSolver.h" name="src/include/NonogramSolver.h">
-<area shape="rect" id="node1" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="112,5,308,32"/>
+<map id="src/NonogramSolver.h" name="src/NonogramSolver.h">
+<area shape="rect" id="node1" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="135,5,285,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,155,65,181"/>
 <area shape="rect" id="node3" title=" " alt="" coords="89,155,152,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="267,155,331,181"/>

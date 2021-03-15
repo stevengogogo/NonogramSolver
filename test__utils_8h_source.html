@@ -74,22 +74,22 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define TEST_UTILS_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;acutest.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">include/utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;include/utils.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> test_utils_flipflop(<span class="keywordtype">void</span>){</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> init = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 0) == 0 );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 0) == 0 );</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    init = 1;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 0) == 0 );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 0) == 0 );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    init = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 1) == 1 );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 1) == 1 );</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    init = 1;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 1) == 0 );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a>(&amp;init, 1) == 0 );</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(1,0) == 0);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(1,1) == 0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(0,1) == 1);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(0,0) == 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(1,0) == 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(1,1) == 0);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(0,1) == 1);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    TEST_ASSERT(<a class="code" href="utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a>(0,0) == 0);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    TEST_ASSERT(falling_FlipFlop_noupdate(0,0) == 0);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    TEST_ASSERT(falling_FlipFlop_noupdate(0,1) == 0);</div>
@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> key = 1;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> id_r[] = {0,5}; <span class="comment">//location of keys;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ids = <a class="code" href="utils_8h.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a>(arr, arr_size, key);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ids = <a class="code" href="utils_8c.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a>(arr, arr_size, key);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    TEST_ASSERT(ids-&gt;len == <span class="keyword">sizeof</span>(id_r)/<span class="keyword">sizeof</span>(id_r[0]));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//Comapre all elements</span></div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    TEST_ASSERT(ids-&gt;maxlen &gt; ids-&gt;len);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//Clean</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="utils_8h.html#ac2231f32af4a640a853b83218c3dfc0e">close_ids_int_arr</a>(ids);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="utils_8c.html#a4e1f808fcfe45e010d3c2f0894d15471">close_ids_int_arr</a>(ids);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> test_dymarr(<span class="keywordtype">void</span>){</div>
@@ -150,11 +150,10 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructdymarr_html"><div class="ttname"><a href="structdymarr.html">dymarr</a></div><div class="ttdoc">Dynamical Array.</div><div class="ttdef"><b>Definition:</b> utils.h:38</div></div>
-<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div><div class="ttdoc">general usage</div></div>
-<div class="ttc" id="autils_8h_html_a2930c011b7fc9518174494e3938cfbf2"><div class="ttname"><a href="utils_8h.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a></div><div class="ttdeci">int rising_FlipFlop(int *init_state, int new_state)</div><div class="ttdef"><b>Definition:</b> utils.c:124</div></div>
-<div class="ttc" id="autils_8h_html_a31c4e10bafa6a20467a4aecbd3e7d455"><div class="ttname"><a href="utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a></div><div class="ttdeci">int rising_FlipFlop_noupdate(int init_state, int new_state)</div><div class="ttdef"><b>Definition:</b> utils.c:132</div></div>
-<div class="ttc" id="autils_8h_html_aac4c9f71325688877f31fbf7bfcc084a"><div class="ttname"><a href="utils_8h.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a></div><div class="ttdeci">dymarr * init_ids_int_arr(int arr[], int arr_size, int key)</div><div class="ttdef"><b>Definition:</b> utils.c:104</div></div>
-<div class="ttc" id="autils_8h_html_ac2231f32af4a640a853b83218c3dfc0e"><div class="ttname"><a href="utils_8h.html#ac2231f32af4a640a853b83218c3dfc0e">close_ids_int_arr</a></div><div class="ttdeci">void close_ids_int_arr(dymarr *)</div><div class="ttdef"><b>Definition:</b> utils.c:116</div></div>
+<div class="ttc" id="autils_8c_html_a2930c011b7fc9518174494e3938cfbf2"><div class="ttname"><a href="utils_8c.html#a2930c011b7fc9518174494e3938cfbf2">rising_FlipFlop</a></div><div class="ttdeci">int rising_FlipFlop(int *init_state, int new_state)</div><div class="ttdef"><b>Definition:</b> utils.c:124</div></div>
+<div class="ttc" id="autils_8c_html_a31c4e10bafa6a20467a4aecbd3e7d455"><div class="ttname"><a href="utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455">rising_FlipFlop_noupdate</a></div><div class="ttdeci">int rising_FlipFlop_noupdate(int init_state, int new_state)</div><div class="ttdef"><b>Definition:</b> utils.c:132</div></div>
+<div class="ttc" id="autils_8c_html_a4e1f808fcfe45e010d3c2f0894d15471"><div class="ttname"><a href="utils_8c.html#a4e1f808fcfe45e010d3c2f0894d15471">close_ids_int_arr</a></div><div class="ttdeci">void close_ids_int_arr(dymarr *a)</div><div class="ttdef"><b>Definition:</b> utils.c:116</div></div>
+<div class="ttc" id="autils_8c_html_aac4c9f71325688877f31fbf7bfcc084a"><div class="ttname"><a href="utils_8c.html#aac4c9f71325688877f31fbf7bfcc084a">init_ids_int_arr</a></div><div class="ttdeci">dymarr * init_ids_int_arr(int arr[], int arr_size, int key)</div><div class="ttdef"><b>Definition:</b> utils.c:104</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
