@@ -68,6 +68,9 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/stevengogogo/NonogramSolver/actions/workflows/ci.yml"><img src="https://github.com/stevengogogo/NonogramSolver/actions/workflows/ci.yml/badge.svg" alt="Ubuntu" style="pointer-events: none;" class="inline"/></a><a href="https://codecov.io/gh/stevengogogo/NonogramSolver"><img src="https://codecov.io/gh/stevengogogo/NonogramSolver/branch/main/graph/badge.svg?token=5F6B6C9M1K" alt="codecov" style="pointer-events: none;" class="inline"/></a><a href="https://github.com/stevengogogo/NonogramSolver/actions/workflows/doc.yml"><img src="https://github.com/stevengogogo/NonogramSolver/actions/workflows/doc.yml/badge.svg" alt="Doxygen Action" style="pointer-events: none;" class="inline"/></a><a href="https://stevengogogo.github.io/NonogramSolver/"><img src="https://img.shields.io/badge/docs-dev-blue.svg" alt="Dev" style="pointer-events: none;" class="inline"/></a></p>
 <p><img src="https://user-images.githubusercontent.com/29009898/110197098-19e2aa00-7e84-11eb-8e0c-396e6a0056a3.png" alt="" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
+Greedy Alogrithm</h1>
+<p><img src="https://user-images.githubusercontent.com/29009898/111065412-813bd200-84f4-11eb-9a3b-3383689e0812.png" alt="" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md2"></a>
 How to measure the number of segments?</h1>
 <ul>
 <li>Fills on the edge doesn't count</li>
@@ -102,7 +105,7 @@ How to measure the number of segments?</h1>
 <div class="line"> </div>
 <div class="line">  return n_seg</div>
 <div class="line">end</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Create 2D array with double pointer and one malloc call</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include&lt;stdio.h&gt;</span> </div>
 <div class="line"><span class="preprocessor">#include&lt;stdlib.h&gt;</span> </div>
@@ -133,18 +136,18 @@ Create 2D array with double pointer and one malloc call</h1>
 <div class="line">  </div>
 <div class="line">    <span class="keywordflow">return</span> 0; </div>
 <div class="line">} </div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Git tag</h1>
 <ul>
 <li>Add tag ```sh git tag -a v0.0.1 -m "my version 1.4" ```</li>
 <li>Push tag ```sh git push origin v0.0.1 ```</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Header files</h1>
 <blockquote class="doxtable">
 <p>It is not recommended to put function definitions in a header file. Ideally there should be only function declarations. Purpose of this code is to only demonstrate working of header files. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Implementation of dynamic 1D array</h1>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">  <span class="keywordtype">int</span> *array;</div>
@@ -185,7 +188,7 @@ Implementation of dynamic 1D array</h1>
 <div class="line">freeArray(&amp;a);</div>
 </div><!-- fragment --><p> <a href="https://stackoverflow.com/questions/3536153/c-dynamically-growing-array">https://stackoverflow.com/questions/3536153/c-dynamically-growing-array</a></p>
 <p>Use <code>realloc</code> to increase or shrink the size.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 How to read line in a file</h1>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> read_file(<span class="keywordtype">void</span>){</div>
 <div class="line"> </div>
@@ -201,7 +204,7 @@ How to read line in a file</h1>
 <div class="line"> </div>
 <div class="line">    fclose(stream);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Reference</h1>
 <ol type="1">
 <li>2D array construction. [<a href="https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/">GreekforGeek</a>]</li>
