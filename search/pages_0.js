@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nonogram_20solver_79',['Nonogram Solver',['../index.html',1,'']]]
+  ['nonogram_20solver_81',['Nonogram Solver',['../index.html',1,'']]]
 ];

@@ -1,13 +1,14 @@
 <map id="test/runtest.c" name="test/runtest.c">
-<area shape="rect" id="node1" title="Unit Testing with acutest." alt="" coords="106,5,205,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,304,65,331"/>
-<area shape="rect" id="node3" title=" " alt="" coords="135,155,210,181"/>
-<area shape="rect" id="node4" href="$test__utils_8h.html" title=" " alt="" coords="73,80,158,107"/>
-<area shape="rect" id="node10" href="$test__Nonogram_8h.html" title=" " alt="" coords="236,80,357,107"/>
-<area shape="rect" id="node5" href="$utils_8h.html" title="general usage" alt="" coords="155,229,211,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="268,304,336,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="361,304,425,331"/>
-<area shape="rect" id="node8" title=" " alt="" coords="181,304,244,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="90,304,157,331"/>
-<area shape="rect" id="node11" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="233,155,363,181"/>
+<area shape="rect" id="node1" title="Unit Testing with acutest." alt="" coords="65,5,164,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="46,304,106,331"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,155,172,181"/>
+<area shape="rect" id="node4" href="$test__utils_8h.html" title=" " alt="" coords="32,80,117,107"/>
+<area shape="rect" id="node10" href="$test__Nonogram_8h.html" title=" " alt="" coords="192,80,314,107"/>
+<area shape="rect" id="node5" href="$utils_8h.html" title="general usage" alt="" coords="198,229,254,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="308,304,376,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="401,304,465,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="222,304,284,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="130,304,197,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="196,155,254,181"/>
+<area shape="rect" id="node12" href="$NonogramSolver_8h.html" title="A Nonogram Solver with brutal&#45;force algorithm." alt="" coords="278,155,407,181"/>
 </map>

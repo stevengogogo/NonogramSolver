@@ -122,8 +122,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>comp_hint</b> (<a clas
 <tr class="memitem:ae58727f9f866f2a7bfecb36d99ede8ec"><td class="memItemLeft" align="right" valign="top"><a id="ae58727f9f866f2a7bfecb36d99ede8ec"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>comp_size2D</b> (<a class="el" href="structsize2D.html">size2D</a> a, <a class="el" href="structsize2D.html">size2D</a> b)</td></tr>
 <tr class="separator:ae58727f9f866f2a7bfecb36d99ede8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91d0ee7edcd1001dcef56aafe4289ab0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a91d0ee7edcd1001dcef56aafe4289ab0">is_nogram_valid</a> (<a class="el" href="structnogram.html">nogram</a> nm)</td></tr>
-<tr class="separator:a91d0ee7edcd1001dcef56aafe4289ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffd3e8278101375186ced056dbe1e13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#aaffd3e8278101375186ced056dbe1e13">is_nogram_valid</a> (<a class="el" href="structnogram.html">nogram</a> *nm)</td></tr>
+<tr class="separator:aaffd3e8278101375186ced056dbe1e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad552076fad9497d6422f1a3d897978fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ad552076fad9497d6422f1a3d897978fe">is_line_valid</a> (int line[], int len_line, <a class="el" href="structhint.html">hint</a> h)</td></tr>
 <tr class="separator:ad552076fad9497d6422f1a3d897978fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8400dab378cadbff8f1c5da5c45fcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a4e8400dab378cadbff8f1c5da5c45fcd">is_line_set</a> (int line[], int len_line)</td></tr>
@@ -164,11 +164,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 <tr class="separator:ace10fb2db0a4958077fa0557d65a187c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6fa23ab472ed25c4233239304afb95a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ad6fa23ab472ed25c4233239304afb95a">set_nonogram_answer</a> (<a class="el" href="structnogram.html">nogram</a> *nptr, char *output_fn)</td></tr>
 <tr class="separator:ad6fa23ab472ed25c4233239304afb95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ac9e098f5fbf207c2829e3dffe3f11b7c">solve_nonogram_greedy</a> (<a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
-<tr class="separator:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3f858d337e28e4a3c8fa5ba0656567"><td class="memItemLeft" align="right" valign="top"><a id="a6f3f858d337e28e4a3c8fa5ba0656567"></a>
 <a class="el" href="structsize2D.html">size2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_nogram_empty</b> (<a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
 <tr class="separator:a6f3f858d337e28e4a3c8fa5ba0656567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ac9e098f5fbf207c2829e3dffe3f11b7c">solve_nonogram_greedy</a> (<a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
+<tr class="separator:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9aae9f51e712d523e1fd708caf4184ff"></a>
@@ -425,8 +425,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 
 </div>
 </div>
-<a id="a91d0ee7edcd1001dcef56aafe4289ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91d0ee7edcd1001dcef56aafe4289ab0">&#9670;&nbsp;</a></span>is_nogram_valid()</h2>
+<a id="aaffd3e8278101375186ced056dbe1e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaffd3e8278101375186ced056dbe1e13">&#9670;&nbsp;</a></span>is_nogram_valid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,7 +434,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
         <tr>
           <td class="memname">int is_nogram_valid </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a> *&#160;</td>
           <td class="paramname"><em>nm</em></td><td>)</td>
           <td></td>
         </tr>
