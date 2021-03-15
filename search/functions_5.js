@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rising_5fflipflop_72',['rising_FlipFlop',['../utils_8c.html#a2930c011b7fc9518174494e3938cfbf2',1,'rising_FlipFlop(int *init_state, int new_state):&#160;utils.c'],['../utils_8h.html#a2930c011b7fc9518174494e3938cfbf2',1,'rising_FlipFlop(int *init_state, int new_state):&#160;utils.c']]],
-  ['rising_5fflipflop_5fnoupdate_73',['rising_FlipFlop_noupdate',['../utils_8c.html#a31c4e10bafa6a20467a4aecbd3e7d455',1,'rising_FlipFlop_noupdate(int init_state, int new_state):&#160;utils.c'],['../utils_8h.html#a31c4e10bafa6a20467a4aecbd3e7d455',1,'rising_FlipFlop_noupdate(int init_state, int new_state):&#160;utils.c']]]
+  ['print_5fcwd_73',['print_cwd',['../utils_8c.html#a47529d26884771b27d145c7c1989490d',1,'print_cwd(void):&#160;utils.c'],['../utils_8h.html#a47529d26884771b27d145c7c1989490d',1,'print_cwd(void):&#160;utils.c']]],
+  ['printf_5fmap_74',['printf_map',['../NonogramSolver_8c.html#a41d6734a709901391dd3212a65014028',1,'printf_map(nogram nog):&#160;NonogramSolver.c'],['../NonogramSolver_8h.html#acc43d3f24c7be570392ccda939e5686c',1,'printf_map(nogram):&#160;NonogramSolver.c']]]
 ];
