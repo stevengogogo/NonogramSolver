@@ -157,13 +157,16 @@ void test_create_nogram_with_answer(void){
     nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
 }
 
-void test_verify_solution(void){
-    
-}
 
 //Solve
 void test_greedy_algorithm(void){
     //TODO
+    nogram nog;
+    
+    nog =  create_nogram_fscantf("test/data/input_1.txt");
+    nog = solve_nonogram_greedy(nog);
+
+    TEST_ASSERT(is_nogram_valid(nog) == 1);
 }
 
 #endif
