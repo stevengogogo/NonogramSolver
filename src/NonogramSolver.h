@@ -121,6 +121,12 @@ nogram create_nogram_fscantf(char* filename);
 
 //Solve Nonogram
 /** Nonogram solver with greedy algorithm*/
-void solve_nonogram_greedy(nogram*);
+int solve_nonogram_greedy(nogram*);
+
+//Status checking
+
+//** Return location (size2D) of empty location. Return (-1,-1) is the nogram is well-defined*/
+size2D find_nogram_empty(nogram*);
+
 
 #endif
