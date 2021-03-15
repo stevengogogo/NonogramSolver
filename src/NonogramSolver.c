@@ -504,8 +504,8 @@ int solve_nonogram_greedy(nogram* nog, int* cell_i,int* succeed, size2D* cell){
 }
 
 int solve_nonogram(nogram* nog){
-    int* cell_i;
-    int* succeed;
+    int* cell_i=0;
+    int* succeed = 0;
     size2D* cell;
 
     solve_nonogram_greedy(nog, cell_i,succeed,cell);
