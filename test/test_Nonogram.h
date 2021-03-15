@@ -225,4 +225,14 @@ void test_greedy_algorithm(void){
     TEST_ASSERT(is_nogram_valid(nog) == 1);
 }
 
+void test_greedy_algorithm2(void){
+    //TODO
+    nogram nog;
+    
+    nog = create_nogram_fscantf("test/data/input_2.txt");
+    solve_nonogram_greedy(&nog);
+
+    TEST_ASSERT(is_nogram_valid(nog) == 1);
+}
+
 #endif

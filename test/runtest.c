@@ -18,6 +18,7 @@ TEST_LIST = {
     {"Nonogram Segment measurement", test_segment_measurement},
     {"Nonogram creation", test_create_nonogram},
     {"Solve and validate Nonogram", test_greedy_algorithm},
+    {"Solve and validate Nonogram2", test_greedy_algorithm2},
     {"Read file", test_create_nogram_with_answer},
     {"Utility: Flipflop",test_utils_flipflop},
     {"Utility: Find IDs", test_utils_find_ID},
