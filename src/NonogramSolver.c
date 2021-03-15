@@ -2,7 +2,7 @@
  * @file NonogramSolver.c
  */
 
-#include "include/NonogramSolver.h"
+#include "NonogramSolver.h"
 
 hint init_hint(){
     hint h;

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "utils.h": "c",
-        "array": "cpp"
+        "array": "cpp",
+        "nonogramsolver.h": "c"
     }
 }

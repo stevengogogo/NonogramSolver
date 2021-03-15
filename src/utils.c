@@ -2,7 +2,7 @@
  * @file utils.c
  */
 
-#include "include/utils.h"
+#include "utils.h"
 
 //IO
 void print_cwd(void){
