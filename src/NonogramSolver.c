@@ -474,10 +474,11 @@ int solve_nonogram_greedy(nogram* nog){
             return 1;
         nog->map[cell.N][cell.M] = hole_val;
         succeed = solve_nonogram_greedy(nog);
-        if (succeed == 1)
+        if (succeed==1)
             return 1;
         nog->map[cell.N][cell.M] = Default_Site_Val;
     }
+    return 0;
 }
 
 //status checking
