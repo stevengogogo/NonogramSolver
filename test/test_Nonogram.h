@@ -163,7 +163,7 @@ void test_greedy_algorithm(void){
     //TODO
     nogram nog;
     
-    nog =  create_nogram_fscantf("test/data/input_1.txt");
+    nog = create_nogram_fscantf("test/data/input_1.txt");
     nog = solve_nonogram_greedy(nog);
 
     TEST_ASSERT(is_nogram_valid(nog) == 1);
