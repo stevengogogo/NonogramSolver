@@ -6,6 +6,10 @@
 ![](https://user-images.githubusercontent.com/29009898/110197098-19e2aa00-7e84-11eb-8e0c-396e6a0056a3.png)
 
 
+## Greedy Alogrithm
+
+![](https://user-images.githubusercontent.com/29009898/111065412-813bd200-84f4-11eb-9a3b-3383689e0812.png)
+
 ## How to measure the number of segments?
 
 - Fills on the edge doesn't count
