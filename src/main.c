@@ -15,7 +15,7 @@ int main()
     
     nog = create_nogram_fscantf("test/data/input_2.txt");
     //nog = create_nogram_scantf();
-    solve_nonogram_greedy(&nog);
+    solve_nonogram(&nog);
     printf_map(nog);
     return 0;
 }

@@ -47,6 +47,7 @@ typedef struct {
     size2D size;
     hints Nhs;
     hints Mhs;
+    int total_cells;
 } nogram;
 
 
@@ -120,13 +121,15 @@ nogram create_nogram_scantf(void);
 nogram create_nogram_fscantf(char* filename);
 
 //Solve Nonogram
+/** Wrapper of nonogram solver*/
+int solve_nonogram(nogram* nog);
 /** Nonogram solver with greedy algorithm*/
-int solve_nonogram_greedy(nogram*);
+int solve_nonogram_greedy(nogram* nog, int* cell_i, int* succeed, size2D* cell);
 
 //Status checking
 
-//** Return location (size2D) of empty location. Return (-1,-1) is the nogram is well-defined*/
-size2D find_nogram_empty(nogram*);
 
+/** Return location with index*/
+void num2loc(size2D* loc,int* i, size2D* map_size);
 
 #endif

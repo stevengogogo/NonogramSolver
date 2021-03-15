@@ -230,7 +230,7 @@ void test_greedy_algorithm(void){
     nog = create_nogram_fscantf("test/data/input_1.txt");
 
     clock_t begin = clock();
-    solve_nonogram_greedy(&nog);
+    solve_nonogram(&nog);
     clock_t end = clock();
     
     printf("\nSolve test 1: %f sec\n", time_elapse(begin,end));
@@ -245,7 +245,7 @@ void test_greedy_algorithm2(void){
     nog = create_nogram_fscantf("test/data/input_2.txt");
     
     clock_t begin = clock();
-    solve_nonogram_greedy(&nog);
+    solve_nonogram(&nog);
     clock_t end = clock();
     printf("\nSolve test 2: %f sec\n", time_elapse(begin,end));
 

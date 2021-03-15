@@ -40,6 +40,8 @@ nogram init_nogram(nogram nm_, size2D size, hints H){
     nm.Nhs = HN;
     nm.Mhs = HM;
 
+    nm.total_cells = size.M * size.N;
+
     return nm;
 }
 
@@ -451,7 +453,7 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 
 //status checking
-size2D find_nogram_empty(nogram* nog){
+size2D find_nogram_empty(nogram* nog, int* cell_i){
     int cell;
     size2D locE;
     for(int i=0;i<nog->size.N;i++){
@@ -473,12 +475,11 @@ size2D find_nogram_empty(nogram* nog){
 
 
 //Solver
-int solve_nonogram_greedy(nogram* nog){
-    size2D cell;
-    int succeed = 0;
-    cell = find_nogram_empty(nog);
 
-    if (cell.M == -1){
+int solve_nonogram_greedy(nogram* nog, int* cell_i,int* succeed, size2D* cell){
+   
+
+    if (*cell_i == ( nog->total_cells - 1)){
         if (is_nogram_valid(nog) == 1){
             //printf_map(*nog);
             return 1;
@@ -487,15 +488,30 @@ int solve_nonogram_greedy(nogram* nog){
             return 0;
     }
     else {
-        nog->map[cell.N][cell.M] = fill_val;
-        succeed = solve_nonogram_greedy(nog);
-        if (succeed==1)
+        num2loc(cell, cell_i, &nog->size);
+
+        nog->map[cell->N][cell->M] = fill_val;
+        *succeed = solve_nonogram_greedy(nog, cell_i, succeed, cell);
+        if (*succeed==1)
             return 1;
-        nog->map[cell.N][cell.M] = hole_val;
-        succeed = solve_nonogram_greedy(nog);
-        if (succeed==1)
+        nog->map[cell->N][cell->M] = hole_val;
+        *succeed = solve_nonogram_greedy(nog, cell_i, succeed, cell);
+        if (*succeed==1)
             return 1;
-        nog->map[cell.N][cell.M] = Default_Site_Val;
+        nog->map[cell->N][cell->M] = Default_Site_Val;
     }
     return 0;
+}
+
+int solve_nonogram(nogram* nog){
+    int* cell_i;
+    int* succeed;
+    size2D* cell;
+
+    solve_nonogram_greedy(nog, cell_i,succeed,cell);
+}
+
+void num2loc(size2D* loc,int* i, size2D* map_size){
+    loc->N = *i / map_size->M;
+    loc->M = *i % map_size->M;
 }
