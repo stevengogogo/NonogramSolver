@@ -475,7 +475,7 @@ size2D find_nogram_empty(nogram* nog){
 //Solver
 int solve_nonogram_greedy(nogram* nog){
     size2D cell;
-    int succeed;
+    int succeed = 0;
     cell = find_nogram_empty(nog);
 
     if (cell.M == -1){
