@@ -4,6 +4,26 @@
 
 #include "NonogramSolver.h"
 
+
+arrL init_arrL(void){
+    arrL a;
+    a.len = 0;
+    return a;
+}
+
+void insert_arrL(arrL* arr, int a){
+    assert((arr->len + 1)<=MAX_CELLS);
+    arr->len += 1;
+    arr->id[arr->len - 1] = a;
+}
+int pop_arrL(arrL* arr){
+    int end;
+    assert((arr->len - 1) >=0);
+    end = arr->id[arr->len - 1];
+    arr->len = arr->len - 1;
+    return end;
+}
+
 hint init_hint(){
     hint h;
     h.nPoint = 0 ;
@@ -458,14 +478,17 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
 //Solver
 
-int solve_nonogram_greedy(nogram* nog){
+int solve_nonogram_greedy(nogram* nog, arrL* empts){
     
-    size2D cell;
+    size2D cell = {
+        .M=0,
+        .N=0
+    };
+    int cell_i ;
     int succeed=0;
     
-    find_nogram_empty(&cell, nog);
 
-    if (cell.M==-1){
+    if (empts->len==0){
         if (is_nogram_valid(nog) == 1){
             return 1;
         }
@@ -473,23 +496,31 @@ int solve_nonogram_greedy(nogram* nog){
             return 0;
     }
     else {
+        cell_i = pop_arrL(empts);
+        num2loc(&cell, &cell_i, &nog->size);
         nog->map[cell.N][cell.M] = fill_val;
-        succeed = solve_nonogram_greedy(nog);
+        succeed = solve_nonogram_greedy(nog, empts);
         if (succeed==1)
             return 1;
         nog->map[cell.N][cell.M] = hole_val;
-        succeed = solve_nonogram_greedy(nog);
+        succeed = solve_nonogram_greedy(nog, empts);
         if (succeed==1)
             return 1;
         nog->map[cell.N][cell.M] = Default_Site_Val;
+        insert_arrL(empts, cell.N*cell.M);
     }
     return 0;
 }
 
 int solve_nonogram(nogram* nog){
 
+    arrL empts = init_arrL();
 
-    solve_nonogram_greedy(nog);
+    for(int i=0;i< nog->total_cells;i++){
+        insert_arrL(&empts, i);
+    }
+
+    solve_nonogram_greedy(nog, &empts);
 }
 
 void num2loc(size2D* loc,int* i, size2D* map_size){
@@ -499,8 +530,8 @@ void num2loc(size2D* loc,int* i, size2D* map_size){
 
 void find_nogram_empty(size2D* locE, nogram* nog){
     int b=0;
-    for(int i=0;i<nog->size.N;i++){
-        for(int j=0;j<nog->size.M;j++){
+    for(int i=locE->N;i<nog->size.N;i++){
+        for(int j=locE->M;j<nog->size.M;j++){
             if (nog->map[i][j]==Default_Site_Val){
                 locE->N = i;
                 locE->M = j;

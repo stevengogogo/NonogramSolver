@@ -19,6 +19,7 @@
 #define Undef_Site_Val 3
 #define Default_Site_Val 2
 #define MAX_LINES 10
+#define MAX_CELLS 100
 #define MAX_HINT_NUM 20
 
 /**
@@ -43,6 +44,11 @@ typedef struct {
 } size2D;
 
 typedef struct {
+    int id[MAX_CELLS];
+    int len;
+} arrL;
+
+typedef struct {
     int map[MAX_LINES][MAX_LINES]; //[row][col]
     size2D size;
     hints Nhs;
@@ -50,6 +56,9 @@ typedef struct {
     int total_cells;
 } nogram;
 
+arrL init_arrL(void);
+void insert_arrL(arrL*, int);
+int pop_arrL(arrL*);
 
 hint init_hint();
 
@@ -124,7 +133,7 @@ nogram create_nogram_fscantf(char* filename);
 /** Wrapper of nonogram solver*/
 int solve_nonogram(nogram* nog);
 /** Nonogram solver with greedy algorithm*/
-int solve_nonogram_greedy(nogram* nog);
+int solve_nonogram_greedy(nogram* nog, arrL* empts);
 
 //Status checking
 
@@ -132,5 +141,7 @@ int solve_nonogram_greedy(nogram* nog);
 /** Return location with index*/
 void find_nogram_empty(size2D* locE, nogram* nog);
 void num2loc(size2D* loc,int* i, size2D* map_size);
+
+
 
 #endif

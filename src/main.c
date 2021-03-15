@@ -11,6 +11,8 @@
 /* * @brief Interface */
 int main()
 {
+
+
     nogram nog;
     
     nog = create_nogram_fscantf("test/data/input_2.txt");

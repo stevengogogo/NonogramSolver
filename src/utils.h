@@ -67,4 +67,5 @@ int rising_FlipFlop(int* init_state, int new_state);
 int rising_FlipFlop_noupdate(int init_state, int new_state);
 int falling_FlipFlop_noupdate(int init_state, int new_state);
 
+
 #endif
