@@ -119,6 +119,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsize2D.html">size2D</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarrL.html">arrL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnogram.html">nogram</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,12 +146,24 @@ Macros</h2></td></tr>
 <tr class="memitem:a07e2b531c72985b064c431c05dfbc5fc"><td class="memItemLeft" align="right" valign="top"><a id="a07e2b531c72985b064c431c05dfbc5fc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_LINES</b>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a07e2b531c72985b064c431c05dfbc5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8bc09f3250bb17afc82868df2bbcfc"><td class="memItemLeft" align="right" valign="top"><a id="afb8bc09f3250bb17afc82868df2bbcfc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_CELLS</b>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:afb8bc09f3250bb17afc82868df2bbcfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05134c5c1ff99ce33eb5f3d7807e66c7"><td class="memItemLeft" align="right" valign="top"><a id="a05134c5c1ff99ce33eb5f3d7807e66c7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_HINT_NUM</b>&#160;&#160;&#160;20</td></tr>
 <tr class="separator:a05134c5c1ff99ce33eb5f3d7807e66c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a12175ad8315c2064071e7a9f530018ea"><td class="memItemLeft" align="right" valign="top"><a id="a12175ad8315c2064071e7a9f530018ea"></a>
+<a class="el" href="structarrL.html">arrL</a>&#160;</td><td class="memItemRight" valign="bottom"><b>init_arrL</b> (void)</td></tr>
+<tr class="separator:a12175ad8315c2064071e7a9f530018ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16af0b38a63f51040d13d1384105b79"><td class="memItemLeft" align="right" valign="top"><a id="af16af0b38a63f51040d13d1384105b79"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insert_arrL</b> (<a class="el" href="structarrL.html">arrL</a> *, int)</td></tr>
+<tr class="separator:af16af0b38a63f51040d13d1384105b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84201d2b9fc39b2ccf7d9606ace098fb"><td class="memItemLeft" align="right" valign="top"><a id="a84201d2b9fc39b2ccf7d9606ace098fb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pop_arrL</b> (<a class="el" href="structarrL.html">arrL</a> *)</td></tr>
+<tr class="separator:a84201d2b9fc39b2ccf7d9606ace098fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07eb8ca8218aa9aefe6db144eef0658d"><td class="memItemLeft" align="right" valign="top"><a id="a07eb8ca8218aa9aefe6db144eef0658d"></a>
 <a class="el" href="structhint.html">hint</a>&#160;</td><td class="memItemRight" valign="bottom"><b>init_hint</b> ()</td></tr>
 <tr class="separator:a07eb8ca8218aa9aefe6db144eef0658d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,8 +240,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 <tr class="separator:a80eb12413419b8d1777c71fef0596f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96a161e430d37e1430e21b4f9ff11fa4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a96a161e430d37e1430e21b4f9ff11fa4">solve_nonogram</a> (<a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
 <tr class="separator:a96a161e430d37e1430e21b4f9ff11fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#ac9e098f5fbf207c2829e3dffe3f11b7c">solve_nonogram_greedy</a> (<a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
-<tr class="separator:ac9e098f5fbf207c2829e3dffe3f11b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017099c6277c8fa532791a55fee59a3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a017099c6277c8fa532791a55fee59a3e">solve_nonogram_greedy</a> (<a class="el" href="structnogram.html">nogram</a> *nog, <a class="el" href="structarrL.html">arrL</a> *empts)</td></tr>
+<tr class="separator:a017099c6277c8fa532791a55fee59a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5360501fa9e663350ada22f4b616e48b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8h.html#a5360501fa9e663350ada22f4b616e48b">find_nogram_empty</a> (<a class="el" href="structsize2D.html">size2D</a> *locE, <a class="el" href="structnogram.html">nogram</a> *nog)</td></tr>
 <tr class="separator:a5360501fa9e663350ada22f4b616e48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb3b3c7b0d57e0c6bded288cd628d9d"><td class="memItemLeft" align="right" valign="top"><a id="aafb3b3c7b0d57e0c6bded288cd628d9d"></a>
@@ -660,8 +674,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>num2loc</b> (<a class
 
 </div>
 </div>
-<a id="ac9e098f5fbf207c2829e3dffe3f11b7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9e098f5fbf207c2829e3dffe3f11b7c">&#9670;&nbsp;</a></span>solve_nonogram_greedy()</h2>
+<a id="a017099c6277c8fa532791a55fee59a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017099c6277c8fa532791a55fee59a3e">&#9670;&nbsp;</a></span>solve_nonogram_greedy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -670,8 +684,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>num2loc</b> (<a class
           <td class="memname">int solve_nonogram_greedy </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structnogram.html">nogram</a> *&#160;</td>
-          <td class="paramname"><em>nog</em></td><td>)</td>
+          <td class="paramname"><em>nog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structarrL.html">arrL</a> *&#160;</td>
+          <td class="paramname"><em>empts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
