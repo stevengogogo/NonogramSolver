@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nogram_37',['nogram',['../structnogram.html',1,'']]]
+  ['nogram_42',['nogram',['../structnogram.html',1,'']]]
 ];

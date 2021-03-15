@@ -186,6 +186,22 @@ Implementation of dynamic 1D array</h1>
 </div><!-- fragment --><p> <a href="https://stackoverflow.com/questions/3536153/c-dynamically-growing-array">https://stackoverflow.com/questions/3536153/c-dynamically-growing-array</a></p>
 <p>Use <code>realloc</code> to increase or shrink the size.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
+How to read line in a file</h1>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> read_file(<span class="keywordtype">void</span>){</div>
+<div class="line"> </div>
+<div class="line">    FILE *stream = fopen(<span class="stringliteral">&quot;test/data/output_1.txt&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line">    <span class="keywordtype">char</span> line[80];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> ((fscanf(stream, <span class="stringliteral">&quot;%[^\n]&quot;</span>, line))!= EOF)</div>
+<div class="line">    {</div>
+<div class="line">        fgetc(stream); <span class="comment">// Reads in &#39;\n&#39; character and moves file</span></div>
+<div class="line">        <span class="comment">// stream past delimiting character</span></div>
+<div class="line">        printf(<span class="stringliteral">&quot;%s \n&quot;</span>, line);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    fclose(stream);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Reference</h1>
 <ol type="1">
 <li>2D array construction. [<a href="https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/">GreekforGeek</a>]</li>
@@ -196,7 +212,8 @@ Reference</h1>
 </ul>
 </li>
 <li>Memory management in C [<a href="https://www.guru99.com/c-dynamic-memory-allocation.html#5">tutorial</a>]</li>
-<li>fscanf: reading file in C. [<a href="https://www.geeksforgeeks.org/scanf-and-fscanf-in-c-simple-yet-poweful/">greekforgeek</a>] </li>
+<li>fscanf: reading file in C. [<a href="https://www.geeksforgeeks.org/scanf-and-fscanf-in-c-simple-yet-poweful/">greekforgeek</a>]</li>
+<li>How to pass 2D array. [<a href="https://www.geeksforgeeks.org/pass-2d-array-parameter-c/">GreekforGeek</a>] </li>
 </ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

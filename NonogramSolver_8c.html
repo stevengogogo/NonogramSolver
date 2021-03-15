@@ -132,9 +132,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>comp_size2D</b> (<a cl
 <tr class="separator:afd5e8266d0f0761447eb9d04bdd3546f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27fe7bff76f35998088ce5017fb46552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhint.html">hint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a27fe7bff76f35998088ce5017fb46552">get_segments</a> (int line[], int len_line)</td></tr>
 <tr class="separator:a27fe7bff76f35998088ce5017fb46552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d1f9c9dc99f3263bed72125a673812d"><td class="memItemLeft" align="right" valign="top"><a id="a3d1f9c9dc99f3263bed72125a673812d"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>bool2sym</b> (int a)</td></tr>
-<tr class="separator:a3d1f9c9dc99f3263bed72125a673812d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d6734a709901391dd3212a65014028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a41d6734a709901391dd3212a65014028">printf_map</a> (<a class="el" href="structnogram.html">nogram</a> nog)</td></tr>
+<tr class="separator:a41d6734a709901391dd3212a65014028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f710b162a2c350c8f3018dd9be7ba7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a96f710b162a2c350c8f3018dd9be7ba7">convert_num2fill</a> (int a)</td></tr>
+<tr class="separator:a96f710b162a2c350c8f3018dd9be7ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac233640621daeb62f9fada6e345234ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ac233640621daeb62f9fada6e345234ec">convert_fill2num</a> (char s)</td></tr>
+<tr class="separator:ac233640621daeb62f9fada6e345234ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812a651b02f02ec42ca263ab85766858"><td class="memItemLeft" align="right" valign="top"><a id="a812a651b02f02ec42ca263ab85766858"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print_nogram_str</b> (<a class="el" href="structnogram.html">nogram</a> nm)</td></tr>
 <tr class="separator:a812a651b02f02ec42ca263ab85766858"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,8 +160,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 <tr class="separator:af94e575bd12cb1f0c300cb9978570266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b89c6b154772a9f6ade96cd334e7e1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a1b89c6b154772a9f6ade96cd334e7e1d">create_nogram_fscantf</a> (char *filename)</td></tr>
 <tr class="separator:a1b89c6b154772a9f6ade96cd334e7e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d04d4748b67e7c04b3ddedb41c010b"><td class="memItemLeft" align="right" valign="top"><a id="a57d04d4748b67e7c04b3ddedb41c010b"></a>
-<a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>solve_nonogram_greedy</b> (<a class="el" href="structnogram.html">nogram</a> nog)</td></tr>
+<tr class="memitem:ace10fb2db0a4958077fa0557d65a187c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ace10fb2db0a4958077fa0557d65a187c">create_nogram_with_answer</a> (char *input_fn, char *output_fn)</td></tr>
+<tr class="separator:ace10fb2db0a4958077fa0557d65a187c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fa23ab472ed25c4233239304afb95a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#ad6fa23ab472ed25c4233239304afb95a">set_nonogram_answer</a> (<a class="el" href="structnogram.html">nogram</a> *nptr, char *output_fn)</td></tr>
+<tr class="separator:ad6fa23ab472ed25c4233239304afb95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d04d4748b67e7c04b3ddedb41c010b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnogram.html">nogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NonogramSolver_8c.html#a57d04d4748b67e7c04b3ddedb41c010b">solve_nonogram_greedy</a> (<a class="el" href="structnogram.html">nogram</a> nog)</td></tr>
 <tr class="separator:a57d04d4748b67e7c04b3ddedb41c010b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -214,6 +220,48 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 
 </div>
 </div>
+<a id="ac233640621daeb62f9fada6e345234ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac233640621daeb62f9fada6e345234ec">&#9670;&nbsp;</a></span>convert_fill2num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int convert_fill2num </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>Convert symbol to integer </li>
+</ul>
+
+</div>
+</div>
+<a id="a96f710b162a2c350c8f3018dd9be7ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f710b162a2c350c8f3018dd9be7ba7">&#9670;&nbsp;</a></span>convert_num2fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char convert_num2fill </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>Convert integer to symbol in nonogram </li>
+</ul>
+
+</div>
+</div>
 <a id="a1b89c6b154772a9f6ade96cd334e7e1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b89c6b154772a9f6ade96cd334e7e1d">&#9670;&nbsp;</a></span>create_nogram_fscantf()</h2>
 
@@ -229,6 +277,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Nonogram creator with txt file</p>
 <p>NOnogram creator with txt file </p>
 
 </div>
@@ -249,6 +298,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
       </table>
 </div><div class="memdoc">
 <p>Nonogram creator with key in </p>
+
+</div>
+</div>
+<a id="ace10fb2db0a4958077fa0557d65a187c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace10fb2db0a4958077fa0557d65a187c">&#9670;&nbsp;</a></span>create_nogram_with_answer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnogram.html">nogram</a> create_nogram_with_answer </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>input_fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>output_fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Nonogram creator with input and output file. The created nonogram is assert valid </p>
 
 </div>
 </div>
@@ -364,6 +442,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
 
 </div>
 </div>
+<a id="a41d6734a709901391dd3212a65014028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d6734a709901391dd3212a65014028">&#9670;&nbsp;</a></span>printf_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printf_map </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a>&#160;</td>
+          <td class="paramname"><em>nog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print out the map with O and _ </p>
+
+</div>
+</div>
 <a id="afd5e8266d0f0761447eb9d04bdd3546f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd5e8266d0f0761447eb9d04bdd3546f">&#9670;&nbsp;</a></span>segment_number()</h2>
 
@@ -396,6 +493,54 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close_hint_str</b> (c
       </table>
 </div><div class="memdoc">
 <p>Count the number of segments in a array </p>
+
+</div>
+</div>
+<a id="ad6fa23ab472ed25c4233239304afb95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fa23ab472ed25c4233239304afb95a">&#9670;&nbsp;</a></span>set_nonogram_answer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_nonogram_answer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a> *&#160;</td>
+          <td class="paramname"><em>nptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>output_fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Use output file to set the map of nogram </p>
+
+</div>
+</div>
+<a id="a57d04d4748b67e7c04b3ddedb41c010b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d04d4748b67e7c04b3ddedb41c010b">&#9670;&nbsp;</a></span>solve_nonogram_greedy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnogram.html">nogram</a> solve_nonogram_greedy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnogram.html">nogram</a>&#160;</td>
+          <td class="paramname"><em>nog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Nonogram solver with greedy algorithm </p>
 
 </div>
 </div>
