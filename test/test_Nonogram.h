@@ -6,8 +6,16 @@
 #define TEST_NONOGRAM_H
 
 #include <string.h>
+#include <time.h>
 #include "acutest.h"
 #include "NonogramSolver.h"
+
+/** Measure the time spent*/
+double time_elapse(clock_t begin,clock_t end){
+    double time_spent = 0.0;
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    return time_spent;
+}
 
 /*Create a nonogram problem*/
 void test_nonogram_struct(void){
@@ -161,7 +169,7 @@ void test_verify_solution(void){
     for(int i=0;i<4;i++)
         nog.map[3][i] = a3[i];
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
+    TEST_ASSERT(is_nogram_valid(&nog) == 1);
 }
 
 void test_verify_solution2(void){
@@ -220,9 +228,14 @@ void test_greedy_algorithm(void){
     nogram nog;
     
     nog = create_nogram_fscantf("test/data/input_1.txt");
-    solve_nonogram_greedy(&nog);
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
+    clock_t begin = clock();
+    solve_nonogram_greedy(&nog);
+    clock_t end = clock();
+    
+    printf("\nSolve test 1: %f sec\n", time_elapse(begin,end));
+
+    TEST_ASSERT(is_nogram_valid(&nog) == 1);
 }
 
 void test_greedy_algorithm2(void){
@@ -230,9 +243,14 @@ void test_greedy_algorithm2(void){
     nogram nog;
     
     nog = create_nogram_fscantf("test/data/input_2.txt");
+    
+    clock_t begin = clock();
     solve_nonogram_greedy(&nog);
+    clock_t end = clock();
+    printf("\nSolve test 2: %f sec\n", time_elapse(begin,end));
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
+    TEST_ASSERT(is_nogram_valid(&nog) == 1);
+    printf_map(nog);
 }
 
 #endif
