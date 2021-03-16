@@ -33,19 +33,23 @@ hint init_hint(){
     return h;
 }
 
-nogram init_nogram(nogram nm_, size2D size, hints H){
+void init_nogram(nogram* nm, size2D size, hints H){
     //number of hint is N+M
-    assert(  H.len == (size.N + size.M) );
-    nogram nm;
-    hints HN, HM;
-    nm = init_nogram_undef(nm);
-    nm.size = size;
+    size_t nm_size = sizeof(nogram*) + sizeof(dymarr*) +(size.M*size.N)*sizeof(int) + sizeof(size2D) + sizeof(hints) ;
 
-    for(int i=0;i<size.N;i++){
-        for(int j=0;j<size.M;j++){
-           nm.map[i][j] = Default_Site_Val;
-        }
+    nm = (nogram*)malloc(nm_size);
+    assert(  H.len == (size.N + size.M) );
+    hints HN, HM;
+    nm->size = size;
+    nm->total_cells = size.M * size.N;
+
+    //Create map
+    init_dymarr(nm->map, nm->total_cells);
+    //initial undefine map
+    for(int i=0;i<(nm->total_cells);i++){
+        insert_dymarr(nm->map, Default_Site_Val);
     }
+
 
     HN.len = size.N; //Hint of N
     HM.len = size.M; //Hint of M
@@ -57,19 +61,58 @@ nogram init_nogram(nogram nm_, size2D size, hints H){
         HM.h[m-size.N] = H.h[m];
     }
 
-    nm.Nhs = HN;
-    nm.Mhs = HM;
+    nm->Nhs = HN;
+    nm->Mhs = HM;
+}
 
-    nm.total_cells = size.M * size.N;
+void close_nogram(nogram* nog){
+    close_dymarr(nog->map);
+    nog->map = NULL;
+    free(nog);
+}
 
-    return nm;
+int get_map(nogram* nog, int N, int M){
+    int i = NM2loc(nog->size, N, M);
+    assert(nog->map->len <= i);
+    return nog->map->array[i];
+}
+void change_map(nogram* nog, int N, int M, int val){
+    int i = NM2loc(nog->size, N, M);
+    assert(nog->map->len <= i);
+    nog->map->array[i] = val;
+}
+
+void get_row(dymarr* line, nogram* nog, int row_i){
+    reset_dymarr(line, nog->size.M);
+    int i = row_i * nog->size.N; //first column element
+    int end_i = i + nog->size.N;
+    for(i; i < end_i ;i++){
+        assert(i<=nog->map->len);
+        insert_dymarr(line, nog->map->array[i]);
+    }
+}
+void get_col(dymarr* line, nogram* nog, int col_i){
+    reset_dymarr(line, nog->size.N);
+    int i = col_i; //first column element
+    
+    while (i<nog->total_cells){
+        assert(i<=nog->map->len);
+        insert_dymarr(line, nog->map->array[i]);
+        i += nog->size.N;
+    }
+}
+
+int NM2loc(size2D s, int N, int M){
+    int i;
+    i = N*s.N + M;
+    return i;
 }
 
 nogram init_nogram_undef(nogram nm){
     nogram NM;
     for(int i=0;i<MAX_LINES; i++){
         for(int j=0;j<MAX_LINES; j++){
-            NM.map[i][j]=Undef_Site_Val;
+            change_map(&nm, i, j, Undef_Site_Val);
         }
     }
     return NM;
@@ -98,13 +141,15 @@ hints create_hints(hint harr[],int number_of_hints){
 //Compare 
 
 /*Compare 2 2D array. Identical 1; 0 otherwise*/
-int comp_array2D(int a[MAX_LINES][MAX_LINES], int b[MAX_LINES][MAX_LINES],int R_length, int C_length){
-    for(int i=0;i<R_length;i++){
-        for(int j=0;j<C_length;j++){
-            if(a[i][j] != b[i][j]){
-                return 0;
-            }
-        }
+int comp_array(dymarr* a, dymarr* b){
+    
+    if (a->len != b->len){
+        return 0;
+    }
+
+    for (int i=0;i<a->len;i++){
+        if(a->array[i] != b->array[i])
+            return 0;
     }
     return 1;
 }
@@ -120,7 +165,7 @@ int comp_nogram(nogram a, nogram b){
     else if (comp_hints(a.Mhs,b.Mhs) == 0){
         return 0;
     }
-    else if (comp_array2D(a.map, b.map, a.size.N, a.size.M) == 0){
+    else if (comp_array(a.map, b.map) == 0){
         return 0;
     }
     return 1;
@@ -164,30 +209,37 @@ int comp_size2D(size2D a, size2D b){
 
 //validation
 int is_nogram_valid(nogram* nm){
-    int row_line[nm->size.M];
-    int col_line[nm->size.N];
+    dymarr* line;
+    init_dymarr(line, MAX_CELLS);
 
     for(int i=0;i<nm->size.N;i++){
-        //copy row data
-        if  (is_line_valid(nm->map[i], nm->size.M, nm->Nhs.h[i])==0)
+        //copy row data 
+        get_row(line, nm, i);
+        if  (is_line_valid(line, nm->size.M, nm->Nhs.h[i])==0){
+            close_dymarr(line);
             return 0;
+        }
     }
     
     for(int i=0;i<nm->size.M;i++){
-        //copy row data
-        for(int j=0;j<nm->size.N;j++)
-            col_line[j] = nm->map[j][i];
+        get_col(line, nm, i);
 
-        if  (is_line_set(col_line, nm->size.N)==0)
+        if  (is_line_set(line, nm->size.N)==0){
+            close_dymarr(line);
             return 0;
-        if  (is_line_valid(col_line, nm->size.N, nm->Mhs.h[i])==0)
+        }
+        if  (is_line_valid(line, nm->size.N, nm->Mhs.h[i])==0){
+            close_dymarr(line);
             return 0;
+        }
+
+        close_dymarr(line);
     }
 
     return 1;
 }
 
-int is_line_valid(int line[], int len_line, hint h){
+int is_line_valid(dymarr* line, int len_line, hint h){
     hint hl;//meausred hint from line
 
     // Check the line is well-defined
@@ -203,7 +255,7 @@ int is_line_valid(int line[], int len_line, hint h){
     return 1;
 }
 
-int is_line_set(int line[], int len_line){
+int is_line_set(dymarr* line, int len_line){
     int undef_i, def_i ;
     undef_i = findfirst_int_arr(line,len_line, Undef_Site_Val);
     def_i = findfirst_int_arr(line,len_line, Default_Site_Val);
@@ -220,18 +272,18 @@ int is_line_set(int line[], int len_line){
     return 1;
 }
 
-int segment_number(int line[], int len_line, int key){
+int segment_number(dymarr* line, int len_line, int key){
     int init_state = 0;
     int new_state;
     int N_seg = 0;
     for(int i=0;i<len_line;i++){
-        new_state = line[i];
+        new_state = line->array[i];
         N_seg += rising_FlipFlop(&init_state, new_state);
     }
     return N_seg;
 }
 
-hint get_segments(int line[], int len_line){
+hint get_segments(dymarr* line, int len_line){
     int init_state = 0;
     int new_state;
     int N_seg = 0;
@@ -242,7 +294,7 @@ hint get_segments(int line[], int len_line){
     hint h = init_hint();
 
     for(int i=0;i<len_line;i++){
-        new_state = line[i]; 
+        new_state = line->array[i]; 
         is_rising = rising_FlipFlop_noupdate(init_state, new_state);
         is_falling = falling_FlipFlop_noupdate(init_state, new_state);
         //update 
@@ -272,7 +324,7 @@ void printf_map(nogram nog){
     char s;
     for(int i=0;i<nog.size.N;i++){
         for(int j=0;j<nog.size.M;j++){
-            s = convert_num2fill(nog.map[i][j]);
+            s = convert_num2fill( get_map(&nog, i, j));
             printf("%c", s);
         }
         printf("\n");
@@ -326,7 +378,7 @@ char* create_nogram_str(nogram nm){
     //Save values
     for(int n=0;n<nm.size.N;n++){
         for(int m=0;m<nm.size.M;m++){
-            val = convert_num2fill(nm.map[n][m]);
+            val = convert_num2fill(get_map(&nm, n,m));
             strncat(mapstr, &val, sizeof(char));
         }
         strncat(mapstr, "\n", sizeof("\n"));
@@ -399,7 +451,7 @@ nogram create_nogram_scantf(void){
         }
     }
 
-    nog = init_nogram(nog, s, H);
+    init_nogram(&nog, s, H);
 
     return nog;
 }
@@ -436,7 +488,7 @@ nogram create_nogram_fscantf(char* filename){
         }
     }
 
-    nog = init_nogram(nog, s, H);
+    init_nogram(&nog, s, H);
 
     return nog;
 }
@@ -464,7 +516,7 @@ void set_nonogram_answer(nogram* nptr, char* output_fn){
 
         for(int j=0;j<nptr->size.M;j++){
             a = convert_fill2num(line[j]);
-            nptr->map[i][j] = a;
+            change_map(nptr, i,j, a);
         }
     }
     fclose(fpt);
@@ -498,15 +550,15 @@ int solve_nonogram_greedy(nogram* nog, arrL empts){
     else {
         cell_i = pop_arrL(&empts);
         num2loc(&cell, &cell_i, &nog->size);
-        nog->map[cell.N][cell.M] = fill_val;
+        change_map(nog, cell.N, cell.M, fill_val);
         succeed = solve_nonogram_greedy(nog, empts);
         if (succeed==1)
             return 1;
-        nog->map[cell.N][cell.M] = hole_val;
+        change_map(nog, cell.N, cell.M, hole_val);
         succeed = solve_nonogram_greedy(nog, empts);
         if (succeed==1)
             return 1;
-        nog->map[cell.N][cell.M] = Default_Site_Val;
+        change_map(nog, cell.N, cell.M, Default_Site_Val);
         insert_arrL(&empts, cell.N*cell.M);
     }
     return 0;
@@ -532,7 +584,7 @@ void find_nogram_empty(size2D* locE, nogram* nog){
     int b=0;
     for(int i=locE->N;i<nog->size.N;i++){
         for(int j=locE->M;j<nog->size.M;j++){
-            if (nog->map[i][j]==Default_Site_Val){
+            if (get_map(nog,i,j)==Default_Site_Val){
                 locE->N = i;
                 locE->M = j;
                 b=1;

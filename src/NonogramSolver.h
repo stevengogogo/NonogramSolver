@@ -49,7 +49,7 @@ typedef struct {
 } arrL;
 
 typedef struct {
-    int map[MAX_LINES][MAX_LINES]; //[row][col]
+    dymarr* map; //[row][col] in one line
     size2D size;
     hints Nhs;
     hints Mhs;
@@ -63,7 +63,13 @@ int pop_arrL(arrL*);
 hint init_hint();
 
 /** @brief Initiate nonogram problem */
-nogram init_nogram(nogram,size2D,hints);
+void init_nogram(nogram*,size2D,hints);
+void close_nogram(nogram*);
+int get_map(nogram*, int N, int M);
+void change_map(nogram*, int N, int M, int val);
+void get_row(dymarr*, nogram*, int row_i);
+void get_col(dymarr*, nogram*, int col_i);
+int NM2loc(size2D, int N, int M);
 
 /** @brief Initiate an undefine nonogram */
 nogram init_nogram_undef(nogram);
@@ -79,7 +85,7 @@ hints create_hints(hint[],int number_of_hints);
  * @param C_length length of columns of `a`
  * @return int 1: Identical; 0 otherwise
  */
-int comp_array2D(int a[MAX_LINES][MAX_LINES], int b[MAX_LINES][MAX_LINES],int R_length, int C_length);
+int comp_array(dymarr* mapa, dymarr* mapb);
 int comp_nogram(nogram, nogram);
 int comp_hints(hints, hints);
 int comp_hint(hint, hint);
@@ -88,15 +94,15 @@ int comp_size2D(size2D, size2D);
 /** Verification: 1 (valid); 0 otherwise */
 int is_nogram_valid(nogram* nm);
 /** Check the validity of a line with the hint. 1:Valid, 0:Invalid*/
-int is_line_valid(int line[], int len_line, hint);
+int is_line_valid(dymarr* line, int len_line, hint);
 /** Return 1 if there is no undefine region */
-int is_line_set(int line[], int len_line);
+int is_line_set(dymarr* line, int len_line);
 
 /** Count the number of segments in a array */
-int segment_number(int line[], int len_line, int key);
+int segment_number(dymarr* line, int len_line, int key);
 
 /** Convert a number line into a hint */
-hint get_segments(int line[], int len_line);
+hint get_segments(dymarr* line, int len_line);
 
 //Display
 /** Print out the map with O and _*/

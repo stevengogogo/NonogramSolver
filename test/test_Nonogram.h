@@ -32,11 +32,11 @@ void test_nonogram_struct(void){
         .M=2
     };//map size
 
-    nm = init_nogram(nm, s, H);//init: map object, size and hints
+    init_nogram(&nm, s, H);//init: map object, size and hints
 
     /*Verify information*/
-    nm.map[0][0] = hole_val; //create psudo solution
-    nm.map[0][1] = fill_val;
+    change_map(&nm, 0, 0, hole_val);
+    change_map(&nm, 0, 1, fill_val);
     char* hint_str;
     char* hint_str_real;
     char* nogram_str = create_nogram_str(nm);
@@ -134,16 +134,24 @@ void test_segment_measurement(void){
     };
     int A_len = 16;
     hint h;
+    dymarr* line;
+    init_dymarr(line, MAX_CELLS);
 
     for(int i=0;i<A_len;i++){
-        h = get_segments(A[i].arr, A[i].len);
+        reset_dymarr(line, MAX_CELLS);
+        insert_arr_dymarr(line, A[i].arr, 4);
+        h = get_segments(line, A[i].len);
         TEST_ASSERT(h.nPoint == A[i].n_seg);
     }
 
-    h = get_segments(A[15].arr, A[15].len);
+    reset_dymarr(line, MAX_CELLS);
+    insert_arr_dymarr(line, A[15].arr, 4);
+    h = get_segments(line, A[15].len);
     TEST_ASSERT(h.pLens[0] == 4);
 
-    h = get_segments(A[14].arr, A[14].len);
+    reset_dymarr(line, MAX_CELLS);
+    insert_arr_dymarr(line, A[14].arr, 4 );
+    h = get_segments(line, A[14].len);
     TEST_ASSERT(h.pLens[0] == 3);
 }
 
@@ -161,13 +169,13 @@ void test_verify_solution(void){
     int a3[4] = {1,1,1,1};
 
     for(int i=0;i<4;i++)
-        nog.map[0][i] = a0[i];
+        change_map(&nog, 0, i, a0[i]);
     for(int i=0;i<4;i++)
-        nog.map[1][i] = a1[i];
+        change_map(&nog, 1, i, a1[i]);
     for(int i=0;i<4;i++)
-        nog.map[2][i] = a2[i];
+        change_map(&nog, 2, i, a2[i]);
     for(int i=0;i<4;i++)
-        nog.map[3][i] = a3[i];
+        change_map(&nog, 3, i, a3[i]);
 
     TEST_ASSERT(is_nogram_valid(&nog) == 1);
 }
@@ -182,17 +190,19 @@ void test_verify_solution2(void){
     int a2[] = {0,1,1,1,0};
     int a3[] = {0,0,0,1,1};
     int a4[] = {1,1,1,1,0};
+
+    for(int i=0;i<5;i++)
+        change_map(&nog, 0, i, a0[i]);
+    for(int i=0;i<5;i++)
+        change_map(&nog, 1, i, a1[i]);
+    for(int i=0;i<5;i++)
+        change_map(&nog, 2, i, a2[i]);
+    for(int i=0;i<5;i++)
+        change_map(&nog, 3, i, a3[i]);
+    for(int i=0;i<5;i++)
+        change_map(&nog, 4, i, a4[i]);
     
-    for(int i=0;i<5;i++)
-        nog.map[0][i] = a0[i];
-    for(int i=0;i<5;i++)
-        nog.map[1][i] = a1[i];
-    for(int i=0;i<5;i++)
-        nog.map[2][i] = a2[i];
-    for(int i=0;i<5;i++)
-        nog.map[3][i] = a3[i];
-    for(int i=0;i<5;i++)
-        nog.map[4][i] = a4[i];
+
 }
 
 void read_file(void){

@@ -11,6 +11,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * @brief Dynamical Array
+ * @param array Interger array
+ * @param len length of data
+ * @param maxlen maximum storage
+ */
+typedef struct{
+    int* array;
+    int len;
+    int maxlen;
+}dymarr;
+
 //IO
 /** Print current directory*/
 void print_cwd(void);
@@ -26,22 +38,12 @@ void int2str(char* s,int num);
 void killstr(char*);
 
 //find: return index of the key. return -1 if the array doesn't contain the key
-int findfirst_int_arr(int arr[], int arr_size, int key);
+int findfirst_int_arr(dymarr* line, int arr_size, int key);
 
 
-/**
- * @brief Dynamical Array
- * @param array Interger array
- * @param len length of data
- * @param maxlen maximum storage
- */
-typedef struct{
-    int* array;
-    int len;
-    int maxlen;
-}dymarr;
 
 void init_dymarr(dymarr*,int init_size);
+void reset_dymarr(dymarr* a,int init_size);
 void close_dymarr(dymarr*);
 void insert_arr_dymarr(dymarr*, int src[], int src_len);
 void insert_dymarr(dymarr*, int val);

@@ -49,9 +49,15 @@ void killstr(char* str){
 
 /*Dynamical Array*/
 void init_dymarr(dymarr* a,int init_size){
-    int* ap = (int*)malloc(init_size*sizeof(int));
-    assert(ap!=NULL);
-    a->array = ap;
+    a->array = (int*)malloc(init_size*sizeof(int));
+    assert(a->array!=NULL);
+    a->len = 0;
+    a->maxlen = init_size;
+}
+
+void reset_dymarr(dymarr* a,int init_size){
+    a->array = realloc(a->array, init_size*sizeof(int));
+    assert(a->array!=NULL);
     a->len = 0;
     a->maxlen = init_size;
 }
@@ -93,9 +99,9 @@ int pop_dymarr(dymarr* a){
 }
 
 
-int findfirst_int_arr(int arr[], int arr_size, int key){
+int findfirst_int_arr(dymarr* line, int arr_size, int key){
     for(int i=0;i<arr_size;i++){
-        if (arr[i] == key){
+        if (line->array[i] == key){
             return i;
         }
     }
