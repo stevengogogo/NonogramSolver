@@ -242,6 +242,7 @@ void test_greedy_algorithm(void){
 
     test_greedy_algorithm_fn("test/data/input_col.txt");
     test_greedy_algorithm_fn("test/data/input_row.txt");
+    //test_greedy_algorithm_fn("test/data/input_long_line.txt");
 
     //test_greedy_algorithm_fn("test/data/input_blank.txt");
 
