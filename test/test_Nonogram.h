@@ -238,10 +238,12 @@ void test_greedy_algorithm_fn(char* filename){
 
 //Solve
 void test_greedy_algorithm(void){
+    test_greedy_algorithm_fn("test/data/input_0.txt");
 
     test_greedy_algorithm_fn("test/data/input_col.txt");
+    test_greedy_algorithm_fn("test/data/input_row.txt");
 
-    test_greedy_algorithm_fn("test/data/input_blank.txt");
+    //test_greedy_algorithm_fn("test/data/input_blank.txt");
 
     test_greedy_algorithm_fn("test/data/input_filled.txt");
 
@@ -252,6 +254,8 @@ void test_greedy_algorithm(void){
     test_greedy_algorithm_fn("test/data/input_3.txt");
     
     test_greedy_algorithm_fn("test/data/input_4.txt");
+    test_greedy_algorithm_fn("test/data/input_5.txt");
+    test_greedy_algorithm_fn("test/data/input_6.txt");
 }
 
 
