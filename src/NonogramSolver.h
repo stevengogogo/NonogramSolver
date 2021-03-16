@@ -18,9 +18,9 @@
 #define fill_val 1
 #define Undef_Site_Val 3
 #define Default_Site_Val 2
-#define MAX_LINES 25
-#define MAX_CELLS 25
-#define MAX_HINT_NUM 25
+#define MAX_LINES 26
+#define MAX_CELLS 26
+#define MAX_HINT_NUM 26
 
 /**
  * @brief A hint element
