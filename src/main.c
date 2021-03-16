@@ -15,7 +15,7 @@ int main()
 
     nogram nog;
     
-    //nog = create_nogram_fscantf("test/data/input_2.txt");
+    //nog = create_nogram_fscantf("test/data/input_col.txt");
     nog = create_nogram_scantf();
     solve_nonogram(&nog);
     printf_map(nog);

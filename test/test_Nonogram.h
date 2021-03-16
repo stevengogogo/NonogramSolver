@@ -221,36 +221,39 @@ void test_create_nogram_with_answer(void){
     nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
 }
 
-
-//Solve
-void test_greedy_algorithm(void){
+void test_greedy_algorithm_fn(char* filename){
     //TODO
     nogram nog;
     
-    nog = create_nogram_fscantf("test/data/input_1.txt");
-
-    clock_t begin = clock();
-    solve_nonogram(&nog);
-    clock_t end = clock();
-    
-    printf("\nSolve test 1: %f sec\n", time_elapse(begin,end));
-
-    TEST_ASSERT(is_nogram_valid(&nog) == 1);
-}
-
-void test_greedy_algorithm2(void){
-    //TODO
-    nogram nog;
-    
-    nog = create_nogram_fscantf("test/data/input_2.txt");
+    nog = create_nogram_fscantf(filename);
     
     clock_t begin = clock();
     solve_nonogram(&nog);
     clock_t end = clock();
-    printf("\nSolve test 2: %f sec\n", time_elapse(begin,end));
+    printf("\nSolve test: %f sec\n", time_elapse(begin,end));
 
     TEST_ASSERT(is_nogram_valid(&nog) == 1);
     printf_map(nog);
 }
+
+//Solve
+void test_greedy_algorithm(void){
+
+    test_greedy_algorithm_fn("test/data/input_col.txt");
+
+    test_greedy_algorithm_fn("test/data/input_blank.txt");
+
+    test_greedy_algorithm_fn("test/data/input_filled.txt");
+
+    test_greedy_algorithm_fn("test/data/input_1.txt");
+    
+    test_greedy_algorithm_fn("test/data/input_2.txt");
+
+    test_greedy_algorithm_fn("test/data/input_3.txt");
+    
+    test_greedy_algorithm_fn("test/data/input_4.txt");
+}
+
+
 
 #endif

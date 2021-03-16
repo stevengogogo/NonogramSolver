@@ -379,7 +379,7 @@ nogram create_nogram_scantf(void){
 
     //Map Size
     scanf("%d%d",&s.N,&s.M);
-    assert( (s.N<MAX_LINES & s.M<MAX_LINES));
+    assert( (s.N<=MAX_LINES & s.M<=MAX_LINES));
 
     H.len = s.N+s.M;
 
@@ -416,7 +416,7 @@ nogram create_nogram_fscantf(char* filename){
 
     //Map Size
     fscanf(fptr, "%d%d",&s.N,&s.M);
-    assert( (s.N<MAX_LINES & s.M<MAX_LINES));
+    assert( (s.N<=MAX_LINES & s.M<=MAX_LINES));
 
     H.len = s.N+s.M;
 
