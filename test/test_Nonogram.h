@@ -6,8 +6,16 @@
 #define TEST_NONOGRAM_H
 
 #include <string.h>
+#include <time.h>
 #include "acutest.h"
 #include "NonogramSolver.h"
+
+/** Measure the time spent*/
+double time_elapse(clock_t begin,clock_t end){
+    double time_spent = 0.0;
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    return time_spent;
+}
 
 /*Create a nonogram problem*/
 void test_nonogram_struct(void){
@@ -161,7 +169,7 @@ void test_verify_solution(void){
     for(int i=0;i<4;i++)
         nog.map[3][i] = a3[i];
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
+    TEST_ASSERT(is_nogram_valid(&nog) == 1);
 }
 
 void test_verify_solution2(void){
@@ -213,26 +221,44 @@ void test_create_nogram_with_answer(void){
     nog = create_nogram_with_answer("test/data/input_1.txt","test/data/output_1.txt");
 }
 
+void test_greedy_algorithm_fn(char* filename){
+    //TODO
+    nogram nog;
+    
+    nog = create_nogram_fscantf(filename);
+    
+    clock_t begin = clock();
+    solve_nonogram(&nog);
+    clock_t end = clock();
+    printf("\nSolve test: %f sec\n", time_elapse(begin,end));
+
+    TEST_ASSERT(is_nogram_valid(&nog) == 1);
+    printf_map(nog);
+}
 
 //Solve
 void test_greedy_algorithm(void){
-    //TODO
-    nogram nog;
-    
-    nog = create_nogram_fscantf("test/data/input_1.txt");
-    solve_nonogram_greedy(&nog);
+    test_greedy_algorithm_fn("test/data/input_0.txt");
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
+    test_greedy_algorithm_fn("test/data/input_col.txt");
+    test_greedy_algorithm_fn("test/data/input_row.txt");
+    test_greedy_algorithm_fn("test/data/input_long_line.txt");
+
+    //test_greedy_algorithm_fn("test/data/input_blank.txt");
+
+    test_greedy_algorithm_fn("test/data/input_filled.txt");
+
+    test_greedy_algorithm_fn("test/data/input_1.txt");
+    
+    test_greedy_algorithm_fn("test/data/input_2.txt");
+
+    test_greedy_algorithm_fn("test/data/input_3.txt");
+    
+    test_greedy_algorithm_fn("test/data/input_4.txt");
+    test_greedy_algorithm_fn("test/data/input_5.txt");
+    test_greedy_algorithm_fn("test/data/input_6.txt");
 }
 
-void test_greedy_algorithm2(void){
-    //TODO
-    nogram nog;
-    
-    nog = create_nogram_fscantf("test/data/input_2.txt");
-    solve_nonogram_greedy(&nog);
 
-    TEST_ASSERT(is_nogram_valid(nog) == 1);
-}
 
 #endif

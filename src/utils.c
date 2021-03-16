@@ -82,6 +82,7 @@ void insert_dymarr(dymarr* a, int val){
 int pop_dymarr(dymarr* a){
     int last_val = a->array[a->len-1];
     a->len -= 1;
+    assert(a>=0);
 
     //Release the memory
     if (a->len < (a->maxlen - 10)){

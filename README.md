@@ -177,6 +177,12 @@ void read_file(void){
 
 ```
 
+## Add test file 
+
+'input_3.txt'
+![](https://courses.engr.illinois.edu/cs440/fa2018/MPs/mp3/assignment3.html)
+
+
 ## Reference
 1. 2D array construction. [[GreekforGeek](https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/)]
 2. Git tag. [[Blog](https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%A8%99%E7%B1%A4)]

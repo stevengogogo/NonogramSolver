@@ -18,8 +18,9 @@
 #define fill_val 1
 #define Undef_Site_Val 3
 #define Default_Site_Val 2
-#define MAX_LINES 10
-#define MAX_HINT_NUM 20
+#define MAX_LINES 24
+#define MAX_CELLS 25
+#define MAX_HINT_NUM 25
 
 /**
  * @brief A hint element
@@ -43,12 +44,21 @@ typedef struct {
 } size2D;
 
 typedef struct {
+    int id[MAX_CELLS];
+    int len;
+} arrL;
+
+typedef struct {
     int map[MAX_LINES][MAX_LINES]; //[row][col]
     size2D size;
     hints Nhs;
     hints Mhs;
+    int total_cells;
 } nogram;
 
+arrL init_arrL(void);
+void insert_arrL(arrL*, int);
+int pop_arrL(arrL*);
 
 hint init_hint();
 
@@ -76,7 +86,7 @@ int comp_hint(hint, hint);
 int comp_size2D(size2D, size2D);
 
 /** Verification: 1 (valid); 0 otherwise */
-int is_nogram_valid(nogram nm);
+int is_nogram_valid(nogram* nm);
 /** Check the validity of a line with the hint. 1:Valid, 0:Invalid*/
 int is_line_valid(int line[], int len_line, hint);
 /** Return 1 if there is no undefine region */
@@ -120,13 +130,18 @@ nogram create_nogram_scantf(void);
 nogram create_nogram_fscantf(char* filename);
 
 //Solve Nonogram
+/** Wrapper of nonogram solver*/
+int solve_nonogram(nogram* nog);
 /** Nonogram solver with greedy algorithm*/
-int solve_nonogram_greedy(nogram*);
+int solve_nonogram_greedy(nogram* nog, arrL empts);
 
 //Status checking
 
-//** Return location (size2D) of empty location. Return (-1,-1) is the nogram is well-defined*/
-size2D find_nogram_empty(nogram*);
+
+/** Return location with index*/
+void find_nogram_empty(size2D* locE, nogram* nog);
+void num2loc(size2D* loc,int* i, size2D* map_size);
+
 
 
 #endif
